@@ -79,8 +79,9 @@ Zero cereri de rețea (fără fetch/XHR, fără fonturi sau CDN externe), zero t
 
 ## Istoric / Changelog
 
-Ultima actualizare: 11 octombrie 2026 (versiune v1.0.2).
+Ultima actualizare: 11 octombrie 2026 (versiune v1.0.3).
 
+- Pe ecrane cu înălțime sub 900 px (de ex. 1280×800) panoul „Joc și opțiuni” pornește închis, ca masa de joc să fie vizibilă fără derulare (rezumatul arată jocul și numărul înțelegerii; un chevron ▾ și un clic îl deschid); la ecrane înalte rămâne deschis. Mutarea, Undo și schimbarea jocului verificate după modificare.
 - Filele Atlas / Joacă / Despre și widgetul de sprijin sunt acum în repere semantice (`main`, `complementary`); axe-core: 0 violări la 1280 și 360 px.
 - Hash-ul CSP al scriptului a fost recalculat după actualizarea numărului de versiune (v1.0 → v1.0.1).
 - „Sugestie”: apăsări repetate pe aceeași poziție dau acum mutări alternative (clasate euristic, marcate „neverificat”), până când nu mai rămâne nicio mutare utilă („Nu mai am alte mutări de sugerat”); 2 chei de interfață noi în toate cele 7 limbi (155 chei × 7 limbi).

@@ -25,7 +25,7 @@
 <meta property="og:type" content="website">
 <meta name="theme-color" content="#120d09">
 <meta name="color-scheme" content="dark">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-SFOcQB/ZagLKSfek+qPDQaNjyWpJ8buynS65uhluOyE='; style-src 'unsafe-inline'; img-src data:; base-uri 'none'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-PXI9rxAw5qEMQtt+jYhoMe2nqmvLSMhxYZwagDfQZGY='; style-src 'unsafe-inline'; img-src data:; base-uri 'none'; form-action 'none'">
 <style>
 :root{--bg:#120d09;--bg2:#1d1610;--panel:#271c13;--panel2:#31241a;--line:#5a4426;--ink:#f1e6cc;--muted:#c4b393;--gold:#c8832a;--gold2:#e8c87a;--felt:#16271d;--felt2:#0e1a13;
 --cardbg:#f6efdc;--cardline:#3b2f1c;--black:#1a1710;--red:#b3261e;--blue:#1c5aa6;--green:#1c7a3d;--sel:#ffd36b;--cur:#8ad1ff;--hintc:#7bf0a0;
@@ -74,6 +74,9 @@ select,input[type=number],input[type=search]{background:var(--panel);border:1px 
 /* play */
 .controls{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:6px 10px;margin-bottom:8px}
 .controls>summary{cursor:pointer;color:var(--gold2);min-height:34px;display:flex;align-items:center}
+.controls>summary:after{content:"▾";margin-left:auto;padding-left:10px;font-size:1.1rem;transition:transform .15s}
+.controls[open]>summary:after{transform:rotate(180deg)}
+@media (prefers-reduced-motion:reduce){.controls>summary:after{transition:none}}
 .ctl{display:flex;flex-wrap:wrap;gap:8px 12px;align-items:end;padding:6px 0 4px}
 .fld{display:flex;flex-direction:column;gap:2px;font-size:.82rem;color:var(--muted)}
 .fld select,.fld input{font-size:1rem}
@@ -1815,7 +1818,7 @@ var ATLAS = [
   var $ = function (id) { return document.getElementById(id); };
   var SUITCH = ['♠', '♥', '♦', '♣'];
   var SUITKEY = ['s_s', 's_h', 's_d', 's_c'];
-  var VER = 'v1.0.2';
+  var VER = 'v1.0.3';
 
   /* ---------- stocare (doar preferințe/statistici; totul în try/catch) ---------- */
   var store = {
@@ -2842,7 +2845,7 @@ var ATLAS = [
     prefs.fit = !!prefs.fit; $('fitChk').checked = prefs.fit;
     $('safeChk').checked = prefs.safe !== false;
     $('autoFinChk').checked = prefs.autofin !== false;
-    $('ctlBox').open = window.innerWidth >= 700;
+    $('ctlBox').open = window.innerWidth >= 700 && window.innerHeight >= 900;
     applyI18n(); buildAtlas(); buildAbout();
     ls.addEventListener('change', function () {
       lang = ls.value; prefs.lang = lang; savePrefs(); applyI18n(); updateCtlSummary(); buildAtlas(); buildAbout(); buildOptions(); buildHelp(); render(false); updateStatus();

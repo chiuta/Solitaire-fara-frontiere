@@ -25,7 +25,7 @@
 <meta property="og:type" content="website">
 <meta name="theme-color" content="#120d09">
 <meta name="color-scheme" content="dark">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-9wWsaA7/xaXLoq52agC5dRP7EG3DbjSFmk/+cBWBB5o='; style-src 'unsafe-inline'; img-src data:; base-uri 'none'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-EVOrxR7oY8UfcDttFZp3SlrGcXR4HFyjD1EKGYZytQ0='; style-src 'unsafe-inline'; img-src data:; base-uri 'none'; form-action 'none'">
 <style>
 :root{--bg:#120d09;--bg2:#1d1610;--panel:#271c13;--panel2:#31241a;--line:#5a4426;--ink:#f1e6cc;--muted:#c4b393;--gold:#c8832a;--gold2:#e8c87a;--felt:#16271d;--felt2:#0e1a13;
 --cardbg:#f6efdc;--cardline:#3b2f1c;--black:#1a1710;--red:#b3261e;--blue:#1c5aa6;--green:#1c7a3d;--sel:#ffd36b;--cur:#8ad1ff;--hintc:#7bf0a0;
@@ -164,12 +164,12 @@ footer.f{margin-top:24px;color:var(--muted);font-size:.85rem;border-top:1px soli
     <div class="langbox"><label for="langSel" data-i18n="lang">Limbă</label>
       <select id="langSel"></select></div>
   </header>
+  <main>
   <div class="tabs" role="tablist">
     <button class="tab" role="tab" id="tabAtlas" aria-controls="paneAtlas" aria-selected="true" data-i18n="tab_atlas">Atlas</button>
     <button class="tab" role="tab" id="tabPlay" aria-controls="panePlay" aria-selected="false" data-i18n="tab_play">Joacă</button>
     <button class="tab" role="tab" id="tabAbout" aria-controls="paneAbout" aria-selected="false" data-i18n="tab_about">Despre</button>
   </div>
-  <main>
   <section id="paneAtlas" role="tabpanel" aria-labelledby="tabAtlas">
     <div class="filters">
       <input type="search" id="q" data-i18n-attr="placeholder:search" placeholder="Caută un joc…" aria-label="search">
@@ -235,7 +235,7 @@ footer.f{margin-top:24px;color:var(--muted);font-size:.85rem;border-top:1px soli
   <div style="display:flex;gap:8px;margin-top:10px"><button class="btn" id="statsReset" data-i18n="stats_reset"></button><button class="btn pri" id="statsClose" data-i18n="close"></button></div>
 </dialog>
 <!-- tf-donate: sprijin voluntar (Patreon + Buy Me a Coffee) — self-contained, fără resurse externe, fără JS -->
-<div id="tf-donate" aria-label="Sprijină autorul">
+<div id="tf-donate" role="complementary" aria-label="Sprijină autorul">
 <style>
 #tf-donate{position:fixed;right:14px;bottom:14px;z-index:2147483600;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;line-height:1}
 #tf-donate *{box-sizing:border-box}
@@ -1813,7 +1813,7 @@ var ATLAS = [
   var $ = function (id) { return document.getElementById(id); };
   var SUITCH = ['♠', '♥', '♦', '♣'];
   var SUITKEY = ['s_s', 's_h', 's_d', 's_c'];
-  var VER = 'v1.0';
+  var VER = 'v1.0.1';
 
   /* ---------- stocare (doar preferințe/statistici; totul în try/catch) ---------- */
   var store = {

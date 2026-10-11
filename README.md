@@ -77,6 +77,14 @@ Zero cereri de rețea (fără fetch/XHR, fără fonturi sau CDN externe), zero t
 - Textele lungi din atlas sunt complete doar în RO și EN; în FR/IT/ES/PT/DE se afișează engleza cu nota „text în engleză". Butoanele și mesajele sunt traduse în toate cele 7 limbi.
 - Testele sunt în afara pachetului (nu fac parte din repo).
 
+## Istoric / Changelog
+
+Ultima actualizare: 11 octombrie 2026 (versiune v1.0.1).
+
+- Filele Atlas / Joacă / Despre și widgetul de sprijin sunt acum în repere semantice (`main`, `complementary`); axe-core: 0 violări la 1280 și 360 px.
+- Hash-ul CSP al scriptului a fost recalculat după actualizarea numărului de versiune (v1.0 → v1.0.1).
+- „Sugestia” rămâne un singur sfat per apăsare (limită declarată, nemodificată).
+
 ## Surse
 
 Reguli consultate: Wikipedia (Klondike, FreeCell, Spider, Yukon, Pyramid, Golf, Scorpion, Canfield, Forty Thieves, Clock, Baker's Dozen, Eight Off); solitairebliss.com (TriPeaks); solitairelaboratory.com (Golf); generatorul de înțelegeri Microsoft FreeCell (LCG `s = s·214013 + 2531011 mod 2^31`, rezultat `s >> 16`), verificat pe înțelegerea #1 cunoscută. Înțelegerea #11982 (cunoscută ca nerezolvabilă) este raportată de solver ca „spațiu epuizat"; faptul se bazează pe literatura FreeCell, nu pe o sursă consultată aici.

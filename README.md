@@ -18,9 +18,9 @@ Un atlas (fișe cu origine, reguli, punctaj, etichete și butonul „▶ Joacă"
 - Mutare prin tragere (pointer events, `touch-action`), prin click-click, prin dublu-tap (mutare automată) și de la tastatură (săgeți / Enter / Spațiu).
 - Auto-completare la final; mutări sigure automate către fundații (opțional, dezactivabile).
 - Cronometru, mutări, scor (vezi „Punctaj").
-- Sugestie prin solver; „Se poate rezolva?" doar pentru FreeCell, cu rezultat tri-state: *rezolvabil* / *nerezolvat în limită* / *nu știu* — niciodată certitudine.
+- Sugestie prin solver, cu alternative la apăsări repetate (clasate euristic, neverificat); „Se poate rezolva?" doar pentru FreeCell, cu rezultat tri-state: *rezolvabil* / *nerezolvat în limită* / *nu știu* — niciodată certitudine.
 - Statistici locale opționale (localStorage, în try/catch; aplicația merge și fără).
-- 7 limbi pentru interfață: RO / EN / FR / IT / ES / PT / DE, cu autodetecție, `lang` dinamic și script de paritate a cheilor (153 chei × 7 limbi).
+- 7 limbi pentru interfață: RO / EN / FR / IT / ES / PT / DE, cu autodetecție, `lang` dinamic și script de paritate a cheilor (155 chei × 7 limbi).
 - Mobil-first: 390 px fără scroll orizontal, suprapunere adaptivă a cărților, aria-live pentru mesaje, focus vizibil, `prefers-reduced-motion`, `<noscript>`.
 
 ### Jocuri
@@ -79,11 +79,11 @@ Zero cereri de rețea (fără fetch/XHR, fără fonturi sau CDN externe), zero t
 
 ## Istoric / Changelog
 
-Ultima actualizare: 11 octombrie 2026 (versiune v1.0.1).
+Ultima actualizare: 11 octombrie 2026 (versiune v1.0.2).
 
 - Filele Atlas / Joacă / Despre și widgetul de sprijin sunt acum în repere semantice (`main`, `complementary`); axe-core: 0 violări la 1280 și 360 px.
 - Hash-ul CSP al scriptului a fost recalculat după actualizarea numărului de versiune (v1.0 → v1.0.1).
-- „Sugestia” rămâne un singur sfat per apăsare (limită declarată, nemodificată).
+- „Sugestie”: apăsări repetate pe aceeași poziție dau acum mutări alternative (clasate euristic, marcate „neverificat”), până când nu mai rămâne nicio mutare utilă („Nu mai am alte mutări de sugerat”); 2 chei de interfață noi în toate cele 7 limbi (155 chei × 7 limbi).
 
 ## Surse
 

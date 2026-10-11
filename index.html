@@ -25,7 +25,7 @@
 <meta property="og:type" content="website">
 <meta name="theme-color" content="#120d09">
 <meta name="color-scheme" content="dark">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-EVOrxR7oY8UfcDttFZp3SlrGcXR4HFyjD1EKGYZytQ0='; style-src 'unsafe-inline'; img-src data:; base-uri 'none'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-SFOcQB/ZagLKSfek+qPDQaNjyWpJ8buynS65uhluOyE='; style-src 'unsafe-inline'; img-src data:; base-uri 'none'; form-action 'none'">
 <style>
 :root{--bg:#120d09;--bg2:#1d1610;--panel:#271c13;--panel2:#31241a;--line:#5a4426;--ink:#f1e6cc;--muted:#c4b393;--gold:#c8832a;--gold2:#e8c87a;--felt:#16271d;--felt2:#0e1a13;
 --cardbg:#f6efdc;--cardline:#3b2f1c;--black:#1a1710;--red:#b3261e;--blue:#1c5aa6;--green:#1c7a3d;--sel:#ffd36b;--cur:#8ad1ff;--hintc:#7bf0a0;
@@ -1280,6 +1280,8 @@ var I18N_ROWS = [
   ["hint_move", "Sugestie: {d}", "Hint: {d}", "Indice : {d}", "Suggerimento: {d}", "Pista: {d}", "Dica: {d}", "Tipp: {d}"],
   ["hint_win", "(plan complet găsit; calculat cunoscând cărțile ascunse)", "(full plan found; computed knowing the hidden cards)", "(plan complet trouvé ; calculé en connaissant les cartes cachées)", "(piano completo trovato; calcolato conoscendo le carte nascoste)", "(plan completo encontrado; calculado conociendo las cartas ocultas)", "(plano completo encontrado; calculado conhecendo as cartas ocultas)", "(vollständiger Plan gefunden; berechnet mit Kenntnis der verdeckten Karten)"],
   ["hint_heur", "(euristic, neverificat: poate duce într-o poziție blocată)", "(heuristic, unverified: may lead to a dead end)", "(heuristique, non vérifié : peut mener à une impasse)", "(euristico, non verificato: può portare a un vicolo cieco)", "(heurístico, sin verificar: puede llevar a un callejón sin salida)", "(heurístico, não verificado: pode levar a um beco sem saída)", "(heuristisch, ungeprüft: kann in eine Sackgasse führen)"],
+  ["hint_alt", "(alternativă: evaluare euristică simplă, neverificată)", "(alternative: simple heuristic ranking, unverified)", "(alternative : classement heuristique simple, non vérifié)", "(alternativa: classifica euristica semplice, non verificata)", "(alternativa: clasificación heurística simple, sin verificar)", "(alternativa: classificação heurística simples, não verificada)", "(Alternative: einfache Heuristik, ungeprüft)"],
+  ["hint_noalt", "Nu mai am alte mutări de sugerat în această poziție.", "No more moves to suggest in this position.", "Plus aucun autre coup à suggérer dans cette position.", "Non ho altre mosse da suggerire in questa posizione.", "No quedan más jugadas que sugerir en esta posición.", "Não há mais jogadas a sugerir nesta posição.", "In dieser Stellung gibt es keine weiteren Vorschläge."],
   ["hint_none", "Nu am găsit nicio sugestie utilă în limita de timp.", "No useful hint found within the time limit.", "Aucun indice utile trouvé dans le temps imparti.", "Nessun suggerimento utile entro il limite di tempo.", "No se encontró una pista útil en el tiempo límite.", "Nenhuma dica útil dentro do limite de tempo.", "Kein sinnvoller Tipp innerhalb des Zeitlimits."],
   ["solving", "Caut…", "Searching…", "Recherche…", "Ricerca…", "Buscando…", "A procurar…", "Suche läuft…"],
   ["cs_yes", "✔ Rezolvabil — plan de {n} mutări găsit și verificat prin reluare.", "✔ Solvable — a {n}-move plan was found and verified by replay.", "✔ Résoluble — plan de {n} coups trouvé et vérifié par rejeu.", "✔ Risolvibile — trovato un piano di {n} mosse, verificato per riesecuzione.", "✔ Resoluble — plan de {n} movimientos encontrado y verificado por repetición.", "✔ Resolúvel — plano de {n} jogadas encontrado e verificado por repetição.", "✔ Lösbar — Plan mit {n} Zügen gefunden und per Wiedergabe geprüft."],
@@ -1813,7 +1815,7 @@ var ATLAS = [
   var $ = function (id) { return document.getElementById(id); };
   var SUITCH = ['♠', '♥', '♦', '♣'];
   var SUITKEY = ['s_s', 's_h', 's_d', 's_c'];
-  var VER = 'v1.0.1';
+  var VER = 'v1.0.2';
 
   /* ---------- stocare (doar preferințe/statistici; totul în try/catch) ---------- */
   var store = {
@@ -2402,10 +2404,40 @@ var ATLAS = [
       onDone(r, pf);
     })();
   }
+  function showHint(st, m, text) {
+    setMsg(text); say(text);
+    var h = { from: -1, fromI: 0, to: -1, to2: -1 };
+    if (m.k === 'm') { h.from = m.a; h.fromI = st.P[m.a].c.length - m.n; h.to = m.b; }
+    else if (m.k === 'p') { h.from = m.a; h.fromI = st.P[m.a].c.length - 1; h.to = m.b >= 0 ? m.b : -1; }
+    else if (m.k === 't') { h.from = m.a; h.fromI = st.P[m.a].c.length - 1; h.to = st.G.W; }
+    else if (m.k === 'd' || m.k === 'r') { h.to = st.G.S; }
+    G.hint = h; render(false);
+    G.hintTimer = setTimeout(function () { G.hint = null; render(false); }, 3500);
+  }
+  /* sugestie alternativă: a doua apăsare pe aceeași poziție clasifică mutările legale rămase cu euristica solverului */
+  function altHint(st) {
+    var seen = G.hintSeen.keys, best = null, bh = Infinity;
+    SOL.moves(st).forEach(function (m) {
+      if (m.z || (m.k === 'm' && st.L[m.a].t === 'F')) return;
+      var k = SOL.mvKey(m); if (seen.indexOf(k) >= 0) return;
+      var ch = SOL.apply(st, m), sm, guard = 0;
+      while (guard++ < 60 && (sm = SOL.safeMove(ch))) ch = SOL.apply(ch, sm);
+      var h = SOL.heur(ch);
+      if (h < bh) { bh = h; best = m; }
+    });
+    return best;
+  }
   function doHint() {
     cancelRun(); clearHint();
     var st = G.ses.st;
     if (SOL.won(st)) return;
+    if (G.hintSeen && G.hintSeen.st === st) {
+      var alt = altHint(st);
+      if (!alt) { setMsg(t('hint_noalt')); say(t('hint_noalt')); return; }
+      G.hintSeen.keys.push(SOL.mvKey(alt));
+      showHint(st, alt, t('hint_move', { d: describeMove(st, alt) }) + ' ' + t('hint_alt'));
+      return;
+    }
     setMsg(t('solving')); $('hintBtn').disabled = true;
     var snapshot = G.ses.st;
     runSolver(st, { maxNodes: 45000, ws: [1, 0.5], maxMs: 1800 }, function (r, pf) {
@@ -2420,14 +2452,8 @@ var ATLAS = [
       }
       if (!path.length) { setMsg(t('hint_none')); return; }
       var m = path[0], text = t('hint_move', { d: describeMove(st, m) }) + ' ' + t(r === 'win' ? 'hint_win' : 'hint_heur');
-      setMsg(text); say(text);
-      var h = { from: -1, fromI: 0, to: -1, to2: -1 };
-      if (m.k === 'm') { h.from = m.a; h.fromI = st.P[m.a].c.length - m.n; h.to = m.b; }
-      else if (m.k === 'p') { h.from = m.a; h.fromI = st.P[m.a].c.length - 1; h.to = m.b >= 0 ? m.b : -1; }
-      else if (m.k === 't') { h.from = m.a; h.fromI = st.P[m.a].c.length - 1; h.to = st.G.W; }
-      else if (m.k === 'd' || m.k === 'r') { h.to = st.G.S; }
-      G.hint = h; render(false);
-      G.hintTimer = setTimeout(function () { G.hint = null; render(false); }, 3500);
+      G.hintSeen = { st: st, keys: [SOL.mvKey(m)] };
+      showHint(st, m, text);
     }, function (n) { setMsg(t('solving') + ' ' + n); });
   }
   function doCanSolve() {

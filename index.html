@@ -3,6 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="application-version" content="1.0.4">
+<meta name="last-updated" content="2026-10-12">
 <!--
   ============================================================================
   Solitaire-fara-frontiere
@@ -25,7 +27,7 @@
 <meta property="og:type" content="website">
 <meta name="theme-color" content="#120d09">
 <meta name="color-scheme" content="dark">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-PXI9rxAw5qEMQtt+jYhoMe2nqmvLSMhxYZwagDfQZGY='; style-src 'unsafe-inline'; img-src data:; base-uri 'none'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-01xprFZIrDgOkPvKRwEFs9hluWRJfzS80jJZqWb06Lg='; style-src 'unsafe-inline'; img-src data:; base-uri 'none'; form-action 'none'">
 <style>
 :root{--bg:#120d09;--bg2:#1d1610;--panel:#271c13;--panel2:#31241a;--line:#5a4426;--ink:#f1e6cc;--muted:#c4b393;--gold:#c8832a;--gold2:#e8c87a;--felt:#16271d;--felt2:#0e1a13;
 --cardbg:#f6efdc;--cardline:#3b2f1c;--black:#1a1710;--red:#b3261e;--blue:#1c5aa6;--green:#1c7a3d;--sel:#ffd36b;--cur:#8ad1ff;--hintc:#7bf0a0;
@@ -229,7 +231,7 @@ footer.f{margin-top:24px;color:var(--muted);font-size:.85rem;border-top:1px soli
   </section>
   <section id="paneAbout" role="tabpanel" aria-labelledby="tabAbout" hidden class="about"></section>
   </main>
-  <footer class="f">Alexio — Alexandru-Ionuț Chiuță · alexio@trom.tf · <span id="verTxt"></span></footer>
+  <footer class="f">Alexio — Alexandru-Ionuț Chiuță · alexio@trom.tf · <span id="app-version"><span data-i18n="ver_label"></span>: <span id="verTxt"></span></span></footer>
 </div>
 <dialog id="statsDlg" aria-labelledby="statsTitle">
   <h2 id="statsTitle" data-i18n="stats_title" style="margin-top:0;color:var(--gold2)"></h2>
@@ -1237,6 +1239,7 @@ var I18N_ROWS = [
   ["tab_atlas", "Atlas", "Atlas", "Atlas", "Atlante", "Atlas", "Atlas", "Atlas"],
   ["tab_play", "Joacă", "Play", "Jouer", "Gioca", "Jugar", "Jogar", "Spielen"],
   ["tab_about", "Despre", "About", "À propos", "Informazioni", "Acerca de", "Sobre", "Info"],
+  ["ver_label", "Versiune", "Version", "Version", "Versione", "Versión", "Versão", "Version"],
   ["lang", "Limbă", "Language", "Langue", "Lingua", "Idioma", "Idioma", "Sprache"],
   ["search", "Caută un joc…", "Search a game…", "Chercher un jeu…", "Cerca un gioco…", "Buscar un juego…", "Procurar um jogo…", "Spiel suchen…"],
   ["f_all", "Toate", "All", "Tous", "Tutti", "Todos", "Todos", "Alle"],
@@ -1818,7 +1821,7 @@ var ATLAS = [
   var $ = function (id) { return document.getElementById(id); };
   var SUITCH = ['♠', '♥', '♦', '♣'];
   var SUITKEY = ['s_s', 's_h', 's_d', 's_c'];
-  var VER = 'v1.0.3';
+  var VER = '1.0.4', VER_DATE = '2026-10-12';
 
   /* ---------- stocare (doar preferințe/statistici; totul în try/catch) ---------- */
   var store = {
@@ -1862,7 +1865,7 @@ var ATLAS = [
     }
     document.title = t('title');
     $('sub').textContent = t('subtitle', { n: SOL.GAMES.length });
-    $('verTxt').textContent = 'Solitaire-fara-frontiere ' + VER;
+    $('verTxt').textContent = 'v ' + VER + ' · ' + VER_DATE;
   }
 
   /* ---------- nume de cărți / grămezi ---------- */

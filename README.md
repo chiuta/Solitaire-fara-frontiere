@@ -1,6 +1,6 @@
 # Solitaire fără frontiere
 
-**Versiune:** 1.0.4 · **Ultima actualizare:** 12 octombrie 2026
+**Versiune:** 1.1.0 · **Ultima actualizare:** 14 octombrie 2026
 
 Atlas de solitaire (patience) cu cărți — 13 jocuri jucabile de un singur jucător, într-un singur fișier HTML, offline, fără cont și fără telemetrie.
 
@@ -80,6 +80,8 @@ Zero cereri de rețea (fără fetch/XHR, fără fonturi sau CDN externe), zero t
 - Testele sunt în afara pachetului (nu fac parte din repo).
 
 ## Istoric / Changelog
+
+- 1.1.0 — 2026-10-14: Copie de rezervă și etichetare date (fff-kit).
 
 - 1.0.4 — 2026-10-12: versiunea și data ultimei actualizări sunt afișate în aplicație
 - Pe ecrane cu înălțime sub 900 px (de ex. 1280×800) panoul „Joc și opțiuni” pornește închis, ca masa de joc să fie vizibilă fără derulare (rezumatul arată jocul și numărul înțelegerii; un chevron ▾ și un clic îl deschid); la ecrane înalte rămâne deschis. Mutarea, Undo și schimbarea jocului verificate după modificare.

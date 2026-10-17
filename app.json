@@ -7,13 +7,11 @@
   "description": "Atlas de solitaire (pasiență) cu cărți: 13 jocuri jucabile de un singur jucător – Klondike, FreeCell, Spider, Yukon, Pyramid, TriPeaks, Golf, Scorpion, Canfield, Forty Thieves, Clock, Baker's Dozen, Eight Off. Offline, fără telemetrie.",
   "egress": [],
   "permissions": [
-    "serviceWorker",
-    "localStorage",
-    "Web Crypto"
+    "serviceWorker"
   ],
   "storageKeys": [],
-  "sizeBytes": 288318,
-  "sha256": "172f4f7560ec039b97f2d286bfae26d30ccd3d6a6caa10310379e5d09d153298",
+  "sizeBytes": 108511,
+  "sha256": "b5ee000fa523ad2689c274d314eebf691400060c36ffa95da90c57fdb114aec9",
   "csp": {
     "present": true,
     "directives": {
@@ -32,10 +30,7 @@
   "features": {
     "export": true,
     "import": true,
-    "i18n": [
-      "ro",
-      "en"
-    ],
+    "i18n": [],
     "pwa": {
       "manifest": true,
       "serviceWorker": true

@@ -63,7 +63,7 @@ Klondike Aces nu este implementat.
 
 ## Confidențialitate și rețea
 
-Zero cereri de rețea (fără fetch/XHR, fără fonturi sau CDN externe), zero telemetrie. CSP strict în `<meta>`: `default-src 'none'`, `img-src data:`, fără `connect-src`; scriptul este permis prin hash SHA-256 (fără `unsafe-inline` pentru script); `style-src 'unsafe-inline'` este păstrat deoarece cărțile sunt poziționate prin atribute `style`. localStorage (`sol.stats.v1`, `sol.prefs.v1`) doar în try/catch. Singurele linkuri externe (Patreon / Coffee) au `rel="noopener"`.
+Zero cereri de rețea (fără fetch/XHR, fără fonturi sau CDN externe), zero telemetrie. CSP strict în `<meta>`: `default-src 'none'`, `img-src data:`, fără `connect-src`; scriptul este permis prin hash SHA-256 (fără `unsafe-inline` pentru script); `style-src 'unsafe-inline'` este păstrat deoarece cărțile sunt poziționate prin atribute `style`. localStorage (`sol.stats.v1`, `sol.prefs.v1`) doar în try/catch. Singurele linkuri externe (Buy Me a Coffee) au `rel="noopener"`.
 
 ## Limite și avertismente
 

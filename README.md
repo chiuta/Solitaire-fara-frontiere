@@ -99,7 +99,7 @@ Deschide `index.html` într-un browser — nu necesită server, build sau instal
 
 ## Licență
 
-Nedeclarată — decizia autorului.
+MIT — vezi fișierul LICENSE.
 
 ## Autor
 

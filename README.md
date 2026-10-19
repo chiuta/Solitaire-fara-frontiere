@@ -1,110 +1,112 @@
 # Solitaire fără frontiere
 
-**Versiune:** 1.1.0 · **Ultima actualizare:** 14 octombrie 2026
+**English** · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-Atlas de solitaire (patience) cu cărți — 13 jocuri jucabile de un singur jucător, într-un singur fișier HTML, offline, fără cont și fără telemetrie.
+**Version:** 1.1.0 · **Last updated:** 2026-10-14
 
-**Live:** https://chiuta.github.io/Solitaire-fara-frontiere/
+An atlas of card solitaire (patience) — 13 single-player games you can play, in a single HTML file, offline, with no account and no telemetry.
 
-![Captură de ecran](screenshot.png)
+**Live app:** https://chiuta.github.io/Solitaire-fara-frontiere/
 
-## Ce este
+![Screenshot](screenshot.png)
 
-Un atlas (fișe cu origine, reguli, punctaj, etichete și butonul „▶ Joacă") plus un motor comun de pile / fundații / stoc / tableau cu reguli parametrizate. Nu există adversar și nu există AI de joc: în locul lui, **„Sugestie"** folosește un solver cu limită de noduri/timp, iar **„Rezolvă automat"** (opțional) rulează planul găsit de solver. Cărțile sunt desenate cu SVG propriu (♠♥♦♣, mod opțional cu 4 culori).
+## What it is
 
-## Funcții (verificate în cod și în teste)
+An atlas (sheets with origin, rules, scoring, tags and the "▶ Play" button) plus a common engine of piles / foundations / stock / tableau with parameterized rules. There is no opponent and no game AI: in its place, **"Hint"** uses a solver with a node/time limit, and **"Auto-solve"** (optional) runs the plan found by the solver. The cards are drawn with custom SVG (♠♥♦♣, optional 4-colour mode).
 
-- 13 jocuri jucabile, cu opțiuni (vezi tabelul).
-- Număr de înțelegere reproductibil (1 … 2 147 483 647), „înțelegere nouă" (crypto.getRandomValues cu rejection sampling) și „aceeași înțelegere".
-- Undo / Redo nelimitat; Undo restabilește exact și scorul.
-- Mutare prin tragere (pointer events, `touch-action`), prin click-click, prin dublu-tap (mutare automată) și de la tastatură (săgeți / Enter / Spațiu).
-- Auto-completare la final; mutări sigure automate către fundații (opțional, dezactivabile).
-- Cronometru, mutări, scor (vezi „Punctaj").
-- Sugestie prin solver, cu alternative la apăsări repetate (clasate euristic, neverificat); „Se poate rezolva?" doar pentru FreeCell, cu rezultat tri-state: *rezolvabil* / *nerezolvat în limită* / *nu știu* — niciodată certitudine.
-- Statistici locale opționale (localStorage, în try/catch; aplicația merge și fără).
-- 7 limbi pentru interfață: RO / EN / FR / IT / ES / PT / DE, cu autodetecție, `lang` dinamic și script de paritate a cheilor (155 chei × 7 limbi).
-- Mobil-first: 390 px fără scroll orizontal, suprapunere adaptivă a cărților, aria-live pentru mesaje, focus vizibil, `prefers-reduced-motion`, `<noscript>`.
+## Features (verified in code and in tests)
 
-### Jocuri
+- 13 playable games, with options (see the table).
+- Reproducible deal number (1 … 2,147,483,647), "new deal" (crypto.getRandomValues with rejection sampling) and "same deal".
+- Unlimited Undo / Redo; Undo restores the score exactly too.
+- Moving by dragging (pointer events, `touch-action`), by click-click, by double-tap (automatic move) and from the keyboard (arrows / Enter / Space).
+- Auto-completion at the end; safe automatic moves to the foundations (optional, can be turned off).
+- Timer, moves, score (see "Scoring").
+- Hint through the solver, with alternatives on repeated presses (ranked heuristically, unverified); "Can it be solved?" only for FreeCell, with a tri-state result: *solvable* / *not solved within the limit* / *unknown* — never certainty.
+- Optional local statistics (localStorage, in try/catch; the application also works without it).
+- 7 interface languages: RO / EN / FR / IT / ES / PT / DE, with auto-detection, dynamic `lang` and a key-parity script (155 keys × 7 languages).
+- Mobile-first: 390 px with no horizontal scroll, adaptive card overlap, aria-live for messages, visible focus, `prefers-reduced-motion`, `<noscript>`.
 
-| Joc | Jucabil? | ⚠ Aproximări / alegeri de reguli |
+### Games
+
+| Game | Playable? | ⚠ Approximations / rule choices |
 |---|---|---|
-| Klondike (draw 1/3; 0, 1 sau 3 pasaje; punctaj standard / Vegas / fără) | da | Penalizarea −20 la draw 3 (din a 4-a trecere): confirmată de două surse secundare (rarepike.com, solitairecat.com); Wikipedia dă doar −100 la draw 1 |
-| FreeCell (3/4/5 celule; supermutare activabilă) | da | numerotarea înțelegerilor este algoritmică, compatibilă cu LCG-ul Microsoft (verificat pe #1) |
-| Spider (1/2/4 culori) | da | punctaj 500 / −1 pe mutare / +100 pe secvență; Undo restabilește scorul (diferență față de implementările clasice) |
-| Yukon | da | — |
-| Pyramid | da | ⚠ vârful stocului disponibil; 2 redistribuiri implicit; victorie „relaxată" implicită; punctaj propriu |
-| TriPeaks | da | ⚠ punctaj propriu (serii); opțiune wrap A–K |
-| Golf | da | ⚠ punctaj propriu (cărți eliminate); Regele „înfundat" (tradițional), opțiuni wrap / K–Q |
-| Scorpion | da | — |
-| Canfield | da | ⚠ completarea golurilor doar din deșeu; mutarea coloanei întregi implicit strictă |
-| Forty Thieves | da | — |
-| Clock | da | șansă pură (≈1/13); fără decizii |
-| Baker's Dozen | da | — |
-| Eight Off | da | gol: rege / orice (opțiune) |
-| Spiderette, Seahaven Towers, Beleaguered Castle, Calculation, Accordion, Aces Up, Russian | **doar în atlas** | fișe cu reguli, fără joc |
+| Klondike (draw 1/3; 0, 1 or 3 passes; standard / Vegas / no scoring) | yes | The −20 penalty at draw 3 (from the 4th pass): confirmed by two secondary sources (rarepike.com, solitairecat.com); Wikipedia gives only −100 at draw 1 |
+| FreeCell (3/4/5 cells; supermove can be enabled) | yes | deal numbering is algorithmic, compatible with Microsoft's LCG (verified on #1) |
+| Spider (1/2/4 suits) | yes | scoring 500 / −1 per move / +100 per sequence; Undo restores the score (a difference from classic implementations) |
+| Yukon | yes | — |
+| Pyramid | yes | ⚠ top of the stock available; 2 redeals by default; "relaxed" win by default; own scoring |
+| TriPeaks | yes | ⚠ own scoring (streaks); wrap A–K option |
+| Golf | yes | ⚠ own scoring (cards removed); King "blocked" (traditional), wrap / K–Q options |
+| Scorpion | yes | — |
+| Canfield | yes | ⚠ filling gaps only from the waste; moving a whole column strict by default |
+| Forty Thieves | yes | — |
+| Clock | yes | pure chance (≈1/13); no decisions |
+| Baker's Dozen | yes | — |
+| Eight Off | yes | space: king / any (option) |
+| Spiderette, Seahaven Towers, Beleaguered Castle, Calculation, Accordion, Aces Up, Russian | **atlas only** | rule sheets, no game |
 
-Klondike Aces nu este implementat.
+Klondike Aces is not implemented.
 
-### Punctaj
+### Scoring
 
-- **Klondike standard:** deșeu→tableau +5, deșeu→fundație +10, tableau→fundație +10, carte întoarsă +5, fundație→tableau −15, reciclare draw 1: −100, draw 3: −20 de la a 4-a trecere; minim 0; fără bonus de timp.
-- **Klondike Vegas:** −52 la început, +5 pe carte urcată în fundație.
-- Spider, TriPeaks, Golf, Pyramid, Clock: vezi fișele din atlas; TriPeaks și Golf folosesc convenții proprii, nu un standard oficial.
+- **Standard Klondike:** waste→tableau +5, waste→foundation +10, tableau→foundation +10, card turned over +5, foundation→tableau −15, recycling at draw 1: −100, at draw 3: −20 from the 4th pass; minimum 0; no time bonus.
+- **Vegas Klondike:** −52 at the start, +5 per card moved up to the foundation.
+- Spider, TriPeaks, Golf, Pyramid, Clock: see the sheets in the atlas; TriPeaks and Golf use their own conventions, not an official standard.
 
-## Manual de utilizare
+## User guide
 
-1. Deschide `index.html` (sau pagina Live). Fila **Atlas** listează jocurile; filtrează sau caută.
-2. Apasă **▶ Joacă** pe o fișă; alege opțiunile (draw, culori, celule…) și, dacă vrei, scrie un număr de înțelegere.
-3. Mută: trage o carte, **sau** apasă cartea și apoi destinația, **sau** folosește săgețile + Enter. Dublu-tap pe o carte o duce automat unde se poate.
-4. **Sugestie** arată următoarea mutare; **Anulează / Refă** sunt nelimitate; **Înțelegere nouă** / **Aceeași înțelegere** repornesc.
-5. Doar la FreeCell: **Se poate rezolva?** rulează solverul cu limită; **Rezolvă automat** execută planul găsit.
-6. Panoul de comenzi este pliabil pe ecrane înguste.
+1. Open `index.html` (or the Live page). The **Atlas** tab lists the games; filter or search.
+2. Press **▶ Play** on a sheet; choose the options (draw, suits, cells…) and, if you want, type a deal number.
+3. Move: drag a card, **or** press the card and then the destination, **or** use the arrows + Enter. Double-tapping a card moves it automatically wherever possible.
+4. **Hint** shows the next move; **Undo / Redo** are unlimited; **New deal** / **Same deal** restart.
+5. FreeCell only: **Can it be solved?** runs the solver with a limit; **Auto-solve** executes the plan found.
+6. The control panel can be collapsed on narrow screens.
 
-## Confidențialitate și rețea
+## Privacy and network
 
-Zero cereri de rețea (fără fetch/XHR, fără fonturi sau CDN externe), zero telemetrie. CSP strict în `<meta>`: `default-src 'none'`, `img-src data:`, fără `connect-src`; scriptul este permis prin hash SHA-256 (fără `unsafe-inline` pentru script); `style-src 'unsafe-inline'` este păstrat deoarece cărțile sunt poziționate prin atribute `style`. localStorage (`sol.stats.v1`, `sol.prefs.v1`) doar în try/catch. Singurele linkuri externe (Buy Me a Coffee) au `rel="noopener"`.
+Zero network requests (no fetch/XHR, no external fonts or CDN), zero telemetry. Strict CSP in `<meta>`: `default-src 'none'`, `img-src data:`, no `connect-src`; the script is allowed by SHA-256 hash (no `unsafe-inline` for scripts); `style-src 'unsafe-inline'` is kept because the cards are positioned through `style` attributes. localStorage (`sol.stats.v1`, `sol.prefs.v1`) only in try/catch. The only external links (Buy Me a Coffee) have `rel="noopener"`.
 
-## Limite și avertismente
+## Limits and warnings
 
-- **Solverul nu este DFS**, ci o căutare best-first (euristică, portofoliu de 3 ponderi) cu limită de noduri și de timp. **Vede cărțile ascunse** (informație perfectă): este un ajutor, nu o simulare corectă a unui jucător. Faptul că nu găsește soluție **nu** înseamnă că înțelegerea e nerezolvabilă.
-- Rata de rezolvare Klondike măsurată (60 000 noduri, 300 înțelegeri, informație perfectă) este doar o **limită inferioară**: draw 1 ≥ 67,3 %, draw 3 ≥ 59,0 % (4,7 % epuizate complet).
-- „Epuizat" la FreeCell (ex. #11982, 61 643 stări) este un indiciu puternic, nu o demonstrație formală.
-- Spider: solverul este slab aici (și confirmat de audit) — pe 10 înțelegeri (1 culoare, apoi 2 culori) nu a găsit niciun plan complet în 150 000 noduri / 5 s; sugestia este doar o mutare euristică, nu un plan până la victorie. Auto-rezolvarea Spider nu este de încredere.
-- Ținte tactile: la jocurile cu ≥8 coloane (Spider, Forty Thieves, Baker's Dozen, TriPeaks, FreeCell cu 5 celule) cărțile au minimum 44 px lățime; pe ecrane înguste masa se derulează orizontal în containerul ei (butoane ◀ ▶, derulare cu degetul pe fundal, derulare automată la tragere). Opțiunea „Încadrează toată masa” revine la cărți mici. La 320 px jocurile cu 7 coloane au cărți de 40 px, iar partea vizibilă pe înălțime a cărților suprapuse în coloane este < 44 px (inerent solitaire-ului).
-- Scurtăturile de tastă (U/Y/H/A/N) sunt active doar cu masa în focus; N cere două apăsări dacă jocul e început.
-- Solverul are plafon de memorie (30 000 stări deschise) și rulează în fragmente scurte; „Sugestia” euristică este etichetată „neverificat, poate duce într-o poziție blocată”.
-- Mesajul „nu mai există mutări utile” poate lipsi în poziții blocate în care mai există mutări fără efect (ex. o coloană întreagă într-o coloană goală) sau reciclări nelimitate ale stocului.
-- „Înțelegere nouă” alege dintre 1 000 000 de numere (ca la FreeCell Microsoft), nu din toate permutările posibile.
-- Textele lungi din atlas sunt complete doar în RO și EN; în FR/IT/ES/PT/DE se afișează engleza cu nota „text în engleză". Butoanele și mesajele sunt traduse în toate cele 7 limbi.
-- Testele sunt în afara pachetului (nu fac parte din repo).
+- **The solver is not DFS**, but a best-first search (heuristic, a portfolio of 3 weightings) with a node and time limit. **It sees the hidden cards** (perfect information): it is an aid, not a faithful simulation of a player. The fact that it finds no solution does **not** mean the deal is unsolvable.
+- The measured Klondike solve rate (60,000 nodes, 300 deals, perfect information) is only a **lower bound**: draw 1 ≥ 67.3%, draw 3 ≥ 59.0% (4.7% fully exhausted).
+- "Exhausted" in FreeCell (e.g. #11982, 61,643 states) is a strong indication, not a formal proof.
+- Spider: the solver is weak here (and confirmed by the audit) — on 10 deals (1 suit, then 2 suits) it found no complete plan within 150,000 nodes / 5 s; the hint is only a heuristic move, not a plan to victory. Spider auto-solve is not reliable.
+- Touch targets: in games with ≥8 columns (Spider, Forty Thieves, Baker's Dozen, TriPeaks, FreeCell with 5 cells) the cards are at least 44 px wide; on narrow screens the table scrolls horizontally within its container (◀ ▶ buttons, finger scrolling on the background, automatic scrolling while dragging). The "Fit the whole table" option goes back to small cards. At 320 px, games with 7 columns have 40 px cards, and the visible height of overlapping cards in columns is < 44 px (inherent to solitaire).
+- Key shortcuts (U/Y/H/A/N) are active only with the table in focus; N asks for two presses if the game has been started.
+- The solver has a memory ceiling (30,000 open states) and runs in short chunks; the heuristic "Hint" is labelled "unverified, may lead to a blocked position".
+- The message "no useful moves left" may be missing in blocked positions where moves without effect still exist (e.g. a whole column onto an empty column) or unlimited stock recycling.
+- "New deal" chooses among 1,000,000 numbers (as in Microsoft FreeCell), not among all possible permutations.
+- The long texts in the atlas are complete only in RO and EN; in FR/IT/ES/PT/DE English is shown with the note "text in English". Buttons and messages are translated into all 7 languages.
+- The tests are outside the package (they are not part of the repo).
 
-## Istoric / Changelog
+## History / Changelog
 
-- 1.1.0 — 2026-10-14: Copie de rezervă și etichetare date (fff-kit).
+- 1.1.0 — 2026-10-14: Backup and data labelling (fff-kit).
 
-- 1.0.4 — 2026-10-12: versiunea și data ultimei actualizări sunt afișate în aplicație
-- Pe ecrane cu înălțime sub 900 px (de ex. 1280×800) panoul „Joc și opțiuni” pornește închis, ca masa de joc să fie vizibilă fără derulare (rezumatul arată jocul și numărul înțelegerii; un chevron ▾ și un clic îl deschid); la ecrane înalte rămâne deschis. Mutarea, Undo și schimbarea jocului verificate după modificare.
-- Filele Atlas / Joacă / Despre și widgetul de sprijin sunt acum în repere semantice (`main`, `complementary`); axe-core: 0 violări la 1280 și 360 px.
-- Hash-ul CSP al scriptului a fost recalculat după actualizarea numărului de versiune (v1.0 → v1.0.1).
-- „Sugestie”: apăsări repetate pe aceeași poziție dau acum mutări alternative (clasate euristic, marcate „neverificat”), până când nu mai rămâne nicio mutare utilă („Nu mai am alte mutări de sugerat”); 2 chei de interfață noi în toate cele 7 limbi (155 chei × 7 limbi).
+- 1.0.4 — 2026-10-12: the version and the date of the last update are shown in the application
+- On screens with a height below 900 px (e.g. 1280×800) the "Game and options" panel starts closed, so that the game table is visible without scrolling (the summary shows the game and the deal number; a ▾ chevron and a click open it); on tall screens it stays open. Moving, Undo and switching games were verified after the change.
+- The Atlas / Play / About tabs and the support widget are now in semantic landmarks (`main`, `complementary`); axe-core: 0 violations at 1280 and 360 px.
+- The CSP hash of the script was recomputed after updating the version number (v1.0 → v1.0.1).
+- "Hint": repeated presses on the same position now give alternative moves (ranked heuristically, marked "unverified"), until no useful move remains ("I have no more moves to suggest"); 2 new interface keys in all 7 languages (155 keys × 7 languages).
 
-## Surse
+## Sources
 
-Reguli consultate: Wikipedia (Klondike, FreeCell, Spider, Yukon, Pyramid, Golf, Scorpion, Canfield, Forty Thieves, Clock, Baker's Dozen, Eight Off); solitairebliss.com (TriPeaks); solitairelaboratory.com (Golf); generatorul de înțelegeri Microsoft FreeCell (LCG `s = s·214013 + 2531011 mod 2^31`, rezultat `s >> 16`), verificat pe înțelegerea #1 cunoscută. Înțelegerea #11982 (cunoscută ca nerezolvabilă) este raportată de solver ca „spațiu epuizat"; faptul se bazează pe literatura FreeCell, nu pe o sursă consultată aici.
+Rules consulted: Wikipedia (Klondike, FreeCell, Spider, Yukon, Pyramid, Golf, Scorpion, Canfield, Forty Thieves, Clock, Baker's Dozen, Eight Off); solitairebliss.com (TriPeaks); solitairelaboratory.com (Golf); the Microsoft FreeCell deal generator (LCG `s = s·214013 + 2531011 mod 2^31`, result `s >> 16`), verified on the known deal #1. Deal #11982 (known to be unsolvable) is reported by the solver as "space exhausted"; the fact is based on the FreeCell literature, not on a source consulted here.
 
-## Rulare locală
+## Running locally
 
-Deschide `index.html` într-un browser — nu necesită server, build sau instalare.
+Open `index.html` in a browser — it needs no server, build or installation.
 
-## Licență
+## License
 
-MIT — vezi fișierul LICENSE.
+MIT — see the LICENSE file.
 
-## Autor
+## Author
 
 Alexio — Alexandru-Ionuț Chiuță (alexio@trom.tf)
 
-## English summary
+## Summary
 
 An offline, single-file atlas of 13 playable single-player solitaire games (Klondike, FreeCell, Spider, Yukon, Pyramid, TriPeaks, Golf, Scorpion, Canfield, Forty Thieves, Clock, Baker's Dozen, Eight Off) plus 7 atlas-only entries. Reproducible deal numbers, unlimited undo/redo, drag / click / keyboard play, and a node-limited best-first solver for hints and an optional auto-solve (it sees hidden cards; a failure never proves unsolvability). Own SVG cards, 7 UI languages, strict CSP, no network, no telemetry. Marked ⚠ where rules are approximated; Klondike solve rates are reported as lower bounds only.

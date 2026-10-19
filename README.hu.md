@@ -10,7 +10,7 @@ Kártyás pasziánszok (patience) atlasza — 13 egyszemélyes, játszható ját
 
 **Online alkalmazás:** https://chiuta.github.io/Solitaire-fara-frontiere/
 
-![Képernyőkép](screenshot.png)
+![Képernyőkép](screenshot.hu.png)
 
 ## Mi ez
 

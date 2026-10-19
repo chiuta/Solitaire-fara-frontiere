@@ -10,7 +10,7 @@ Atlante di solitari (patience) con le carte — 13 giochi per un solo giocatore,
 
 **App online:** https://chiuta.github.io/Solitaire-fara-frontiere/
 
-![Schermata](screenshot.png)
+![Schermata](screenshot.it.png)
 
 ## Che cos'è
 

@@ -10,7 +10,7 @@ Atlas de solitaire (patience) cu cărți — 13 jocuri jucabile de un singur juc
 
 **Live:** https://chiuta.github.io/Solitaire-fara-frontiere/
 
-![Captură de ecran](screenshot.png)
+![Captură de ecran](screenshot.ro.png)
 
 ## Ce este
 

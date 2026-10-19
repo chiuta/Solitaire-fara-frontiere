@@ -10,7 +10,7 @@ Atlas de solitarios (paciencias) de cartas — 13 juegos para un solo jugador, e
 
 **Aplicación en línea:** https://chiuta.github.io/Solitaire-fara-frontiere/
 
-![Captura de pantalla](screenshot.png)
+![Captura de pantalla](screenshot.es.png)
 
 ## Qué es
 

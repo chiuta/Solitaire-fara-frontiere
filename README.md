@@ -10,7 +10,7 @@ An atlas of card solitaire (patience) — 13 single-player games you can play, i
 
 **Live app:** https://chiuta.github.io/Solitaire-fara-frontiere/
 
-![Screenshot](screenshot.png)
+![Screenshot](screenshot.en.png)
 
 ## What it is
 

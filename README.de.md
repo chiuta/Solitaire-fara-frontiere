@@ -10,7 +10,7 @@ Atlas der Karten-Solitaires (Patiencen) — 13 spielbare Spiele für einen Spiel
 
 **Online-App:** https://chiuta.github.io/Solitaire-fara-frontiere/
 
-![Screenshot](screenshot.png)
+![Screenshot](screenshot.de.png)
 
 ## Was es ist
 

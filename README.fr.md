@@ -10,7 +10,7 @@ Atlas de solitaires (patiences) de cartes — 13 jeux jouables à un seul joueur
 
 **Application en ligne :** https://chiuta.github.io/Solitaire-fara-frontiere/
 
-![Capture d'écran](screenshot.png)
+![Capture d'écran](screenshot.fr.png)
 
 ## Présentation
 

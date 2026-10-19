@@ -2,7 +2,9 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · **Italiano** · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Versione:** 1.1.0 · **Ultimo aggiornamento:** 2026-10-14
+**Versione:** 1.2.0 · **Ultimo aggiornamento:** 2026-10-19
+
+Lingue dell'interfaccia: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
 Atlante di solitari (patience) con le carte — 13 giochi per un solo giocatore, in un unico file HTML, offline, senza account e senza telemetria.
 
@@ -24,7 +26,7 @@ Un atlante (schede con origine, regole, punteggio, etichette e il pulsante «▶
 - Cronometro, mosse, punteggio (vedi «Punteggio»).
 - Suggerimento tramite solver, con alternative a pressioni ripetute (ordinate euristicamente, non verificate); «Si può risolvere?» solo per FreeCell, con risultato a tre stati: *risolvibile* / *non risolto entro il limite* / *non so* — mai certezza.
 - Statistiche locali facoltative (localStorage, in try/catch; l'applicazione funziona anche senza).
-- 7 lingue per l'interfaccia: RO / EN / FR / IT / ES / PT / DE, con rilevamento automatico, `lang` dinamico e script di parità delle chiavi (155 chiavi × 7 lingue).
+- 8 lingue per l'interfaccia: RO / EN / FR / IT / ES / PT / DE / HU, con rilevamento automatico, `lang` dinamico e script di parità delle chiavi (155 chiavi × 7 lingue).
 - Mobile-first: 390 px senza scorrimento orizzontale, sovrapposizione adattiva delle carte, aria-live per i messaggi, focus visibile, `prefers-reduced-motion`, `<noscript>`.
 
 ### Giochi
@@ -78,7 +80,7 @@ Zero richieste di rete (nessun fetch/XHR, nessun font o CDN esterno), zero telem
 - Il solver ha un tetto di memoria (30.000 stati aperti) e viene eseguito in brevi frammenti; il «Suggerimento» euristico è etichettato «non verificato, può portare a una posizione bloccata».
 - Il messaggio «non ci sono più mosse utili» può mancare in posizioni bloccate in cui esistono ancora mosse senza effetto (es. un'intera colonna su una colonna vuota) o riciclaggi illimitati del mazzo.
 - «Nuova smazzata» sceglie tra 1.000.000 di numeri (come nel FreeCell di Microsoft), non tra tutte le permutazioni possibili.
-- I testi lunghi dell'atlante sono completi solo in RO e EN; in FR/IT/ES/PT/DE viene mostrato l'inglese con la nota «testo in inglese». I pulsanti e i messaggi sono tradotti in tutte e 7 le lingue.
+- I testi lunghi dell'atlante sono completi solo in RO e EN; in FR/IT/ES/PT/DE/HU viene mostrato l'inglese con la nota «testo in inglese». I pulsanti e i messaggi sono tradotti in tutte e 8 le lingue.
 - I test sono fuori dal pacchetto (non fanno parte del repo).
 
 ## Cronologia / Changelog
@@ -109,4 +111,4 @@ Alexio — Alexandru-Ionuț Chiuță (alexio@trom.tf)
 
 ## Riepilogo
 
-Un atlante offline in un unico file di 13 giochi di solitario giocabili da un solo giocatore (Klondike, FreeCell, Spider, Yukon, Pyramid, TriPeaks, Golf, Scorpion, Canfield, Forty Thieves, Clock, Baker's Dozen, Eight Off) più 7 voci solo atlante. Numeri di smazzata riproducibili, annulla/ripristina illimitati, gioco con trascinamento / clic / tastiera, e un solver best-first con limite di nodi per i suggerimenti e una risoluzione automatica facoltativa (vede le carte nascoste; un fallimento non prova mai l'irrisolvibilità). Carte SVG proprie, 7 lingue dell'interfaccia, CSP rigorosa, nessuna rete, nessuna telemetria. Contrassegnato ⚠ dove le regole sono approssimate; i tassi di risoluzione di Klondike sono riportati solo come limiti inferiori.
+Un atlante offline in un unico file di 13 giochi di solitario giocabili da un solo giocatore (Klondike, FreeCell, Spider, Yukon, Pyramid, TriPeaks, Golf, Scorpion, Canfield, Forty Thieves, Clock, Baker's Dozen, Eight Off) più 7 voci solo atlante. Numeri di smazzata riproducibili, annulla/ripristina illimitati, gioco con trascinamento / clic / tastiera, e un solver best-first con limite di nodi per i suggerimenti e una risoluzione automatica facoltativa (vede le carte nascoste; un fallimento non prova mai l'irrisolvibilità). Carte SVG proprie, 8 lingue dell'interfaccia, CSP rigorosa, nessuna rete, nessuna telemetria. Contrassegnato ⚠ dove le regole sono approssimate; i tassi di risoluzione di Klondike sono riportati solo come limiti inferiori.

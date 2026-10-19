@@ -2,7 +2,9 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · **Português** · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Versão:** 1.1.0 · **Última atualização:** 2026-10-14
+**Versão:** 1.2.0 · **Última atualização:** 2026-10-19
+
+Idiomas da interface: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
 Atlas de solitários (paciências) de cartas — 13 jogos para um só jogador, num único ficheiro HTML, offline, sem conta e sem telemetria.
 
@@ -24,7 +26,7 @@ Um atlas (fichas com origem, regras, pontuação, etiquetas e o botão «▶ Jog
 - Cronómetro, jogadas, pontuação (ver «Pontuação»).
 - Sugestão através do solver, com alternativas em pressões repetidas (classificadas heuristicamente, não verificadas); «Tem solução?» apenas para o FreeCell, com um resultado de três estados: *resolúvel* / *não resolvido dentro do limite* / *não sei* — nunca certeza.
 - Estatísticas locais opcionais (localStorage, em try/catch; a aplicação funciona também sem elas).
-- 7 idiomas de interface: RO / EN / FR / IT / ES / PT / DE, com deteção automática, `lang` dinâmico e script de paridade de chaves (155 chaves × 7 idiomas).
+- 8 idiomas de interface: RO / EN / FR / IT / ES / PT / DE / HU, com deteção automática, `lang` dinâmico e script de paridade de chaves (155 chaves × 7 idiomas).
 - Mobile-first: 390 px sem deslocamento horizontal, sobreposição adaptativa das cartas, aria-live para mensagens, foco visível, `prefers-reduced-motion`, `<noscript>`.
 
 ### Jogos
@@ -78,7 +80,7 @@ Zero pedidos de rede (sem fetch/XHR, sem tipos de letra nem CDN externos), zero 
 - O solver tem um teto de memória (30 000 estados abertos) e é executado em fragmentos curtos; a «Sugestão» heurística está etiquetada como «não verificada, pode levar a uma posição bloqueada».
 - A mensagem «não há mais jogadas úteis» pode faltar em posições bloqueadas em que ainda existem jogadas sem efeito (p. ex. uma coluna inteira para uma coluna vazia) ou reciclagens ilimitadas do baralho.
 - «Nova distribuição» escolhe entre 1 000 000 de números (como no FreeCell da Microsoft), não entre todas as permutações possíveis.
-- Os textos longos do atlas estão completos apenas em RO e EN; em FR/IT/ES/PT/DE é mostrado o inglês com a nota «texto em inglês». Os botões e as mensagens estão traduzidos nos 7 idiomas.
+- Os textos longos do atlas estão completos apenas em RO e EN; em FR/IT/ES/PT/DE/HU é mostrado o inglês com a nota «texto em inglês». Os botões e as mensagens estão traduzidos nos 8 idiomas.
 - Os testes estão fora do pacote (não fazem parte do repositório).
 
 ## Histórico / Registo de alterações
@@ -109,4 +111,4 @@ Alexio — Alexandru-Ionuț Chiuță (alexio@trom.tf)
 
 ## Resumo
 
-Um atlas offline, num único ficheiro, de 13 jogos de solitário jogáveis por um só jogador (Klondike, FreeCell, Spider, Yukon, Pyramid, TriPeaks, Golf, Scorpion, Canfield, Forty Thieves, Clock, Baker's Dozen, Eight Off) mais 7 entradas apenas de atlas. Números de distribuição reproduzíveis, anular/refazer ilimitados, jogo com arrastamento / clique / teclado, e um solver melhor-primeiro com limite de nós para as sugestões e uma resolução automática opcional (vê as cartas ocultas; uma falha nunca prova a irresolubilidade). Cartas SVG próprias, 7 idiomas de interface, CSP rigorosa, sem rede, sem telemetria. Marcado com ⚠ onde as regras são aproximadas; as taxas de resolução do Klondike são indicadas apenas como limites inferiores.
+Um atlas offline, num único ficheiro, de 13 jogos de solitário jogáveis por um só jogador (Klondike, FreeCell, Spider, Yukon, Pyramid, TriPeaks, Golf, Scorpion, Canfield, Forty Thieves, Clock, Baker's Dozen, Eight Off) mais 7 entradas apenas de atlas. Números de distribuição reproduzíveis, anular/refazer ilimitados, jogo com arrastamento / clique / teclado, e um solver melhor-primeiro com limite de nós para as sugestões e uma resolução automática opcional (vê as cartas ocultas; uma falha nunca prova a irresolubilidade). Cartas SVG próprias, 8 idiomas de interface, CSP rigorosa, sem rede, sem telemetria. Marcado com ⚠ onde as regras são aproximadas; as taxas de resolução do Klondike são indicadas apenas como limites inferiores.

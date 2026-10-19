@@ -2,7 +2,9 @@
 
 [English](README.md) · [Română](README.ro.md) · **Français** · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Version :** 1.1.0 · **Dernière mise à jour :** 2026-10-14
+**Version :** 1.2.0 · **Dernière mise à jour :** 2026-10-19
+
+Langues de l'interface : **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
 Atlas de solitaires (patiences) de cartes — 13 jeux jouables à un seul joueur, dans un seul fichier HTML, hors ligne, sans compte et sans télémétrie.
 
@@ -24,7 +26,7 @@ Un atlas (fiches avec origine, règles, décompte des points, étiquettes et bou
 - Chronomètre, coups, score (voir « Décompte des points »).
 - Indice par solveur, avec des alternatives en cas d'appuis répétés (classées heuristiquement, non vérifiées) ; « Est-ce résoluble ? » uniquement pour FreeCell, avec un résultat à trois états : *résoluble* / *non résolu dans la limite* / *je ne sais pas* — jamais une certitude.
 - Statistiques locales facultatives (localStorage, dans un try/catch ; l'application fonctionne aussi sans).
-- 7 langues d'interface : RO / EN / FR / IT / ES / PT / DE, avec détection automatique, `lang` dynamique et script de parité des clés (155 clés × 7 langues).
+- 8 langues d'interface : RO / EN / FR / IT / ES / PT / DE / HU, avec détection automatique, `lang` dynamique et script de parité des clés (155 clés × 7 langues).
 - Mobile d'abord : 390 px sans défilement horizontal, chevauchement adaptatif des cartes, aria-live pour les messages, focus visible, `prefers-reduced-motion`, `<noscript>`.
 
 ### Jeux
@@ -78,7 +80,7 @@ Zéro requête réseau (pas de fetch/XHR, pas de polices ni de CDN externes), z�
 - Le solveur a un plafond de mémoire (30 000 états ouverts) et s'exécute par courts fragments ; l'« Indice » heuristique est étiqueté « non vérifié, peut mener à une position bloquée ».
 - Le message « il n'y a plus de coups utiles » peut manquer dans des positions bloquées où il reste des coups sans effet (p. ex. une colonne entière vers une colonne vide) ou des recyclages illimités du talon.
 - « Nouvelle donne » choisit parmi 1 000 000 de numéros (comme dans le FreeCell de Microsoft), et non parmi toutes les permutations possibles.
-- Les textes longs de l'atlas ne sont complets qu'en RO et EN ; en FR/IT/ES/PT/DE, l'anglais est affiché avec la mention « texte en anglais ». Les boutons et les messages sont traduits dans les 7 langues.
+- Les textes longs de l'atlas ne sont complets qu'en RO et EN ; en FR/IT/ES/PT/DE/HU, l'anglais est affiché avec la mention « texte en anglais ». Les boutons et les messages sont traduits dans les 8 langues.
 - Les tests sont en dehors du paquet (ils ne font pas partie du dépôt).
 
 ## Historique / Journal des modifications
@@ -89,7 +91,7 @@ Zéro requête réseau (pas de fetch/XHR, pas de polices ni de CDN externes), z�
 - Sur les écrans de moins de 900 px de hauteur (p. ex. 1280×800), le panneau « Jeu et options » démarre fermé, afin que la table de jeu soit visible sans défilement (le résumé indique le jeu et le numéro de donne ; un chevron ▾ et un clic l'ouvrent) ; sur les écrans hauts, il reste ouvert. Le déplacement, Annuler et le changement de jeu ont été vérifiés après la modification.
 - Les onglets Atlas / Jouer / À propos et le widget de soutien sont désormais dans des repères sémantiques (`main`, `complementary`) ; axe-core : 0 violation à 1280 et 360 px.
 - Le hachage CSP du script a été recalculé après la mise à jour du numéro de version (v1.0 → v1.0.1).
-- « Indice » : des appuis répétés sur la même position donnent désormais des coups alternatifs (classés heuristiquement, marqués « non vérifié »), jusqu'à ce qu'il ne reste plus aucun coup utile (« Je n'ai plus d'autres coups à suggérer ») ; 2 nouvelles clés d'interface dans les 7 langues (155 clés × 7 langues).
+- « Indice » : des appuis répétés sur la même position donnent désormais des coups alternatifs (classés heuristiquement, marqués « non vérifié »), jusqu'à ce qu'il ne reste plus aucun coup utile (« Je n'ai plus d'autres coups à suggérer ») ; 2 nouvelles clés d'interface dans les 8 langues (155 clés × 7 langues).
 
 ## Sources
 
@@ -109,4 +111,4 @@ Alexio — Alexandru-Ionuț Chiuță (alexio@trom.tf)
 
 ## Résumé
 
-Un atlas hors ligne, en un seul fichier, de 13 jeux de solitaire jouables à un joueur (Klondike, FreeCell, Spider, Yukon, Pyramid, TriPeaks, Golf, Scorpion, Canfield, Forty Thieves, Clock, Baker's Dozen, Eight Off) plus 7 entrées réservées à l'atlas. Numéros de donne reproductibles, annulation/rétablissement illimités, jeu au glisser / au clic / au clavier, et un solveur meilleur-d'abord limité en nœuds pour les indices et une résolution automatique facultative (il voit les cartes cachées ; un échec ne prouve jamais l'irrésolubilité). Cartes en SVG maison, 7 langues d'interface, CSP stricte, aucun réseau, aucune télémétrie. Marqué ⚠ là où les règles sont approximées ; les taux de résolution de Klondike ne sont donnés que comme bornes inférieures.
+Un atlas hors ligne, en un seul fichier, de 13 jeux de solitaire jouables à un joueur (Klondike, FreeCell, Spider, Yukon, Pyramid, TriPeaks, Golf, Scorpion, Canfield, Forty Thieves, Clock, Baker's Dozen, Eight Off) plus 7 entrées réservées à l'atlas. Numéros de donne reproductibles, annulation/rétablissement illimités, jeu au glisser / au clic / au clavier, et un solveur meilleur-d'abord limité en nœuds pour les indices et une résolution automatique facultative (il voit les cartes cachées ; un échec ne prouve jamais l'irrésolubilité). Cartes en SVG maison, 8 langues d'interface, CSP stricte, aucun réseau, aucune télémétrie. Marqué ⚠ là où les règles sont approximées ; les taux de résolution de Klondike ne sont donnés que comme bornes inférieures.

@@ -2,7 +2,9 @@
 
 **English** · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Version:** 1.1.0 · **Last updated:** 2026-10-14
+**Version:** 1.2.0 · **Last updated:** 2026-10-19
+
+Interface languages: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
 An atlas of card solitaire (patience) — 13 single-player games you can play, in a single HTML file, offline, with no account and no telemetry.
 
@@ -24,7 +26,7 @@ An atlas (sheets with origin, rules, scoring, tags and the "▶ Play" button) pl
 - Timer, moves, score (see "Scoring").
 - Hint through the solver, with alternatives on repeated presses (ranked heuristically, unverified); "Can it be solved?" only for FreeCell, with a tri-state result: *solvable* / *not solved within the limit* / *unknown* — never certainty.
 - Optional local statistics (localStorage, in try/catch; the application also works without it).
-- 7 interface languages: RO / EN / FR / IT / ES / PT / DE, with auto-detection, dynamic `lang` and a key-parity script (155 keys × 7 languages).
+- 8 interface languages: RO / EN / FR / IT / ES / PT / DE / HU, with auto-detection, dynamic `lang` and a key-parity script (155 keys × 7 languages).
 - Mobile-first: 390 px with no horizontal scroll, adaptive card overlap, aria-live for messages, visible focus, `prefers-reduced-motion`, `<noscript>`.
 
 ### Games
@@ -78,7 +80,7 @@ Zero network requests (no fetch/XHR, no external fonts or CDN), zero telemetry. 
 - The solver has a memory ceiling (30,000 open states) and runs in short chunks; the heuristic "Hint" is labelled "unverified, may lead to a blocked position".
 - The message "no useful moves left" may be missing in blocked positions where moves without effect still exist (e.g. a whole column onto an empty column) or unlimited stock recycling.
 - "New deal" chooses among 1,000,000 numbers (as in Microsoft FreeCell), not among all possible permutations.
-- The long texts in the atlas are complete only in RO and EN; in FR/IT/ES/PT/DE English is shown with the note "text in English". Buttons and messages are translated into all 7 languages.
+- The long texts in the atlas are complete only in RO and EN; in FR/IT/ES/PT/DE/HU English is shown with the note "text in English". Buttons and messages are translated into all 8 languages.
 - The tests are outside the package (they are not part of the repo).
 
 ## History / Changelog
@@ -109,4 +111,4 @@ Alexio — Alexandru-Ionuț Chiuță (alexio@trom.tf)
 
 ## Summary
 
-An offline, single-file atlas of 13 playable single-player solitaire games (Klondike, FreeCell, Spider, Yukon, Pyramid, TriPeaks, Golf, Scorpion, Canfield, Forty Thieves, Clock, Baker's Dozen, Eight Off) plus 7 atlas-only entries. Reproducible deal numbers, unlimited undo/redo, drag / click / keyboard play, and a node-limited best-first solver for hints and an optional auto-solve (it sees hidden cards; a failure never proves unsolvability). Own SVG cards, 7 UI languages, strict CSP, no network, no telemetry. Marked ⚠ where rules are approximated; Klondike solve rates are reported as lower bounds only.
+An offline, single-file atlas of 13 playable single-player solitaire games (Klondike, FreeCell, Spider, Yukon, Pyramid, TriPeaks, Golf, Scorpion, Canfield, Forty Thieves, Clock, Baker's Dozen, Eight Off) plus 7 atlas-only entries. Reproducible deal numbers, unlimited undo/redo, drag / click / keyboard play, and a node-limited best-first solver for hints and an optional auto-solve (it sees hidden cards; a failure never proves unsolvability). Own SVG cards, 8 UI languages, strict CSP, no network, no telemetry. Marked ⚠ where rules are approximated; Klondike solve rates are reported as lower bounds only.

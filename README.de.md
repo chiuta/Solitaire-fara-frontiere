@@ -2,7 +2,9 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · **Deutsch** · [Magyar](README.hu.md)
 
-**Version:** 1.1.0 · **Zuletzt aktualisiert:** 2026-10-14
+**Version:** 1.2.0 · **Zuletzt aktualisiert:** 2026-10-19
+
+Oberflächensprachen: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
 Atlas der Karten-Solitaires (Patiencen) — 13 spielbare Spiele für einen Spieler, in einer einzigen HTML-Datei, offline, ohne Konto und ohne Telemetrie.
 
@@ -24,7 +26,7 @@ Ein Atlas (Steckbriefe mit Herkunft, Regeln, Punktewertung, Schlagwörtern und d
 - Zeitmesser, Züge, Punktzahl (siehe „Punktewertung“).
 - Tipp per Solver, mit Alternativen bei wiederholtem Drücken (heuristisch gereiht, ungeprüft); „Ist es lösbar?“ nur für FreeCell, mit einem Dreizustandsergebnis: *lösbar* / *im Limit nicht gelöst* / *unbekannt* — niemals Gewissheit.
 - Optionale lokale Statistiken (localStorage, in try/catch; die Anwendung funktioniert auch ohne).
-- 7 Oberflächensprachen: RO / EN / FR / IT / ES / PT / DE, mit automatischer Erkennung, dynamischem `lang` und einem Skript zur Schlüsselparität (155 Schlüssel × 7 Sprachen).
+- 8 Oberflächensprachen: RO / EN / FR / IT / ES / PT / DE / HU, mit automatischer Erkennung, dynamischem `lang` und einem Skript zur Schlüsselparität (155 Schlüssel × 7 Sprachen).
 - Mobile-first: 390 px ohne horizontales Scrollen, adaptive Kartenüberlappung, aria-live für Meldungen, sichtbarer Fokus, `prefers-reduced-motion`, `<noscript>`.
 
 ### Spiele
@@ -78,7 +80,7 @@ Null Netzwerkanfragen (kein fetch/XHR, keine externen Schriftarten oder CDN), nu
 - Der Solver hat eine Speicherobergrenze (30.000 offene Zustände) und läuft in kurzen Abschnitten; der heuristische „Tipp“ ist mit „ungeprüft, kann in eine blockierte Stellung führen“ gekennzeichnet.
 - Die Meldung „keine nützlichen Züge mehr“ kann in blockierten Stellungen fehlen, in denen es noch wirkungslose Züge gibt (z. B. eine ganze Spalte auf eine leere Spalte) oder unbegrenztes Recycling des Talons.
 - „Neues Blatt“ wählt aus 1.000.000 Nummern (wie beim Microsoft-FreeCell), nicht aus allen möglichen Permutationen.
-- Die langen Texte im Atlas sind nur in RO und EN vollständig; in FR/IT/ES/PT/DE wird Englisch mit dem Hinweis „Text auf Englisch“ angezeigt. Schaltflächen und Meldungen sind in allen 7 Sprachen übersetzt.
+- Die langen Texte im Atlas sind nur in RO und EN vollständig; in FR/IT/ES/PT/DE/HU wird Englisch mit dem Hinweis „Text auf Englisch“ angezeigt. Schaltflächen und Meldungen sind in allen 8 Sprachen übersetzt.
 - Die Tests liegen außerhalb des Pakets (sie sind nicht Teil des Repos).
 
 ## Verlauf / Changelog
@@ -109,4 +111,4 @@ Alexio — Alexandru-Ionuț Chiuță (alexio@trom.tf)
 
 ## Zusammenfassung
 
-Ein einteiliger Offline-Atlas mit 13 spielbaren Solitaire-Spielen für einen Spieler (Klondike, FreeCell, Spider, Yukon, Pyramid, TriPeaks, Golf, Scorpion, Canfield, Forty Thieves, Clock, Baker's Dozen, Eight Off) plus 7 reinen Atlas-Einträgen. Reproduzierbare Blattnummern, unbegrenztes Rückgängig/Wiederholen, Spielen per Ziehen / Klick / Tastatur und ein knotenbegrenzter Best-First-Solver für Tipps und ein optionales automatisches Lösen (er sieht verdeckte Karten; ein Misserfolg beweist nie die Unlösbarkeit). Eigene SVG-Karten, 7 Oberflächensprachen, strenge CSP, kein Netzwerk, keine Telemetrie. Mit ⚠ gekennzeichnet, wo Regeln angenähert sind; die Lösungsraten bei Klondike werden nur als untere Schranken angegeben.
+Ein einteiliger Offline-Atlas mit 13 spielbaren Solitaire-Spielen für einen Spieler (Klondike, FreeCell, Spider, Yukon, Pyramid, TriPeaks, Golf, Scorpion, Canfield, Forty Thieves, Clock, Baker's Dozen, Eight Off) plus 7 reinen Atlas-Einträgen. Reproduzierbare Blattnummern, unbegrenztes Rückgängig/Wiederholen, Spielen per Ziehen / Klick / Tastatur und ein knotenbegrenzter Best-First-Solver für Tipps und ein optionales automatisches Lösen (er sieht verdeckte Karten; ein Misserfolg beweist nie die Unlösbarkeit). Eigene SVG-Karten, 8 Oberflächensprachen, strenge CSP, kein Netzwerk, keine Telemetrie. Mit ⚠ gekennzeichnet, wo Regeln angenähert sind; die Lösungsraten bei Klondike werden nur als untere Schranken angegeben.

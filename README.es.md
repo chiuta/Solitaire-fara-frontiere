@@ -2,7 +2,9 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · **Español** · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Versión:** 1.1.0 · **Última actualización:** 2026-10-14
+**Versión:** 1.2.0 · **Última actualización:** 2026-10-19
+
+Idiomas de la interfaz: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
 Atlas de solitarios (paciencias) de cartas — 13 juegos para un solo jugador, en un único archivo HTML, sin conexión, sin cuenta y sin telemetría.
 
@@ -24,7 +26,7 @@ Un atlas (fichas con origen, reglas, puntuación, etiquetas y el botón «▶ Ju
 - Cronómetro, movimientos, puntuación (véase «Puntuación»).
 - Pista mediante solver, con alternativas en pulsaciones repetidas (clasificadas heurísticamente, sin verificar); «¿Se puede resolver?» solo para FreeCell, con un resultado de tres estados: *resoluble* / *no resuelto dentro del límite* / *no lo sé* — nunca certeza.
 - Estadísticas locales opcionales (localStorage, en try/catch; la aplicación funciona también sin ellas).
-- 7 idiomas de interfaz: RO / EN / FR / IT / ES / PT / DE, con detección automática, `lang` dinámico y script de paridad de claves (155 claves × 7 idiomas).
+- 8 idiomas de interfaz: RO / EN / FR / IT / ES / PT / DE / HU, con detección automática, `lang` dinámico y script de paridad de claves (155 claves × 7 idiomas).
 - Mobile-first: 390 px sin desplazamiento horizontal, solapamiento adaptable de cartas, aria-live para mensajes, foco visible, `prefers-reduced-motion`, `<noscript>`.
 
 ### Juegos
@@ -78,7 +80,7 @@ Cero peticiones de red (sin fetch/XHR, sin fuentes ni CDN externos), cero teleme
 - El solver tiene un tope de memoria (30 000 estados abiertos) y se ejecuta en fragmentos cortos; la «Pista» heurística está etiquetada como «sin verificar, puede llevar a una posición bloqueada».
 - El mensaje «no quedan movimientos útiles» puede faltar en posiciones bloqueadas en las que aún existen movimientos sin efecto (p. ej. una columna entera a una columna vacía) o reciclados ilimitados del mazo.
 - «Nuevo reparto» elige entre 1 000 000 de números (como en el FreeCell de Microsoft), no entre todas las permutaciones posibles.
-- Los textos largos del atlas están completos solo en RO y EN; en FR/IT/ES/PT/DE se muestra el inglés con la nota «texto en inglés». Los botones y los mensajes están traducidos a los 7 idiomas.
+- Los textos largos del atlas están completos solo en RO y EN; en FR/IT/ES/PT/DE/HU se muestra el inglés con la nota «texto en inglés». Los botones y los mensajes están traducidos a los 8 idiomas.
 - Las pruebas están fuera del paquete (no forman parte del repositorio).
 
 ## Historial / Registro de cambios
@@ -109,4 +111,4 @@ Alexio — Alexandru-Ionuț Chiuță (alexio@trom.tf)
 
 ## Resumen
 
-Un atlas sin conexión, en un único archivo, de 13 juegos de solitario jugables para un solo jugador (Klondike, FreeCell, Spider, Yukon, Pyramid, TriPeaks, Golf, Scorpion, Canfield, Forty Thieves, Clock, Baker's Dozen, Eight Off) más 7 entradas solo de atlas. Números de reparto reproducibles, deshacer/rehacer ilimitados, juego con arrastre / clic / teclado, y un solver primero-el-mejor con límite de nodos para las pistas y una resolución automática opcional (ve las cartas ocultas; un fallo nunca prueba la irresolubilidad). Cartas SVG propias, 7 idiomas de interfaz, CSP estricta, sin red, sin telemetría. Marcado con ⚠ donde las reglas son aproximadas; las tasas de resolución de Klondike se indican solo como cotas inferiores.
+Un atlas sin conexión, en un único archivo, de 13 juegos de solitario jugables para un solo jugador (Klondike, FreeCell, Spider, Yukon, Pyramid, TriPeaks, Golf, Scorpion, Canfield, Forty Thieves, Clock, Baker's Dozen, Eight Off) más 7 entradas solo de atlas. Números de reparto reproducibles, deshacer/rehacer ilimitados, juego con arrastre / clic / teclado, y un solver primero-el-mejor con límite de nodos para las pistas y una resolución automática opcional (ve las cartas ocultas; un fallo nunca prueba la irresolubilidad). Cartas SVG propias, 8 idiomas de interfaz, CSP estricta, sin red, sin telemetría. Marcado con ⚠ donde las reglas son aproximadas; las tasas de resolución de Klondike se indican solo como cotas inferiores.

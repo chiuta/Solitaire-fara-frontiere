@@ -2,7 +2,9 @@
 
 [English](README.md) · **Română** · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Versiune:** 1.1.0 · **Ultima actualizare:** 2026-10-14
+**Versiune:** 1.2.0 · **Ultima actualizare:** 2026-10-19
+
+Limbile interfeței: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
 Atlas de solitaire (patience) cu cărți — 13 jocuri jucabile de un singur jucător, într-un singur fișier HTML, offline, fără cont și fără telemetrie.
 
@@ -24,7 +26,7 @@ Un atlas (fișe cu origine, reguli, punctaj, etichete și butonul „▶ Joacă"
 - Cronometru, mutări, scor (vezi „Punctaj").
 - Sugestie prin solver, cu alternative la apăsări repetate (clasate euristic, neverificat); „Se poate rezolva?" doar pentru FreeCell, cu rezultat tri-state: *rezolvabil* / *nerezolvat în limită* / *nu știu* — niciodată certitudine.
 - Statistici locale opționale (localStorage, în try/catch; aplicația merge și fără).
-- 7 limbi pentru interfață: RO / EN / FR / IT / ES / PT / DE, cu autodetecție, `lang` dinamic și script de paritate a cheilor (155 chei × 7 limbi).
+- 8 limbi pentru interfață: RO / EN / FR / IT / ES / PT / DE / HU, cu autodetecție, `lang` dinamic și script de paritate a cheilor (155 chei × 7 limbi).
 - Mobil-first: 390 px fără scroll orizontal, suprapunere adaptivă a cărților, aria-live pentru mesaje, focus vizibil, `prefers-reduced-motion`, `<noscript>`.
 
 ### Jocuri
@@ -78,7 +80,7 @@ Zero cereri de rețea (fără fetch/XHR, fără fonturi sau CDN externe), zero t
 - Solverul are plafon de memorie (30 000 stări deschise) și rulează în fragmente scurte; „Sugestia” euristică este etichetată „neverificat, poate duce într-o poziție blocată”.
 - Mesajul „nu mai există mutări utile” poate lipsi în poziții blocate în care mai există mutări fără efect (ex. o coloană întreagă într-o coloană goală) sau reciclări nelimitate ale stocului.
 - „Înțelegere nouă” alege dintre 1 000 000 de numere (ca la FreeCell Microsoft), nu din toate permutările posibile.
-- Textele lungi din atlas sunt complete doar în RO și EN; în FR/IT/ES/PT/DE se afișează engleza cu nota „text în engleză". Butoanele și mesajele sunt traduse în toate cele 7 limbi.
+- Textele lungi din atlas sunt complete doar în RO și EN; în FR/IT/ES/PT/DE/HU se afișează engleza cu nota „text în engleză". Butoanele și mesajele sunt traduse în toate cele 8 limbi.
 - Testele sunt în afara pachetului (nu fac parte din repo).
 
 ## Istoric / Changelog
@@ -109,4 +111,4 @@ Alexio — Alexandru-Ionuț Chiuță (alexio@trom.tf)
 
 ## English summary
 
-An offline, single-file atlas of 13 playable single-player solitaire games (Klondike, FreeCell, Spider, Yukon, Pyramid, TriPeaks, Golf, Scorpion, Canfield, Forty Thieves, Clock, Baker's Dozen, Eight Off) plus 7 atlas-only entries. Reproducible deal numbers, unlimited undo/redo, drag / click / keyboard play, and a node-limited best-first solver for hints and an optional auto-solve (it sees hidden cards; a failure never proves unsolvability). Own SVG cards, 7 UI languages, strict CSP, no network, no telemetry. Marked ⚠ where rules are approximated; Klondike solve rates are reported as lower bounds only.
+An offline, single-file atlas of 13 playable single-player solitaire games (Klondike, FreeCell, Spider, Yukon, Pyramid, TriPeaks, Golf, Scorpion, Canfield, Forty Thieves, Clock, Baker's Dozen, Eight Off) plus 7 atlas-only entries. Reproducible deal numbers, unlimited undo/redo, drag / click / keyboard play, and a node-limited best-first solver for hints and an optional auto-solve (it sees hidden cards; a failure never proves unsolvability). Own SVG cards, 8 UI languages, strict CSP, no network, no telemetry. Marked ⚠ where rules are approximated; Klondike solve rates are reported as lower bounds only.

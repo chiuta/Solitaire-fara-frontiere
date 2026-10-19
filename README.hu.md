@@ -2,7 +2,9 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · **Magyar**
 
-**Verzió:** 1.1.0 · **Utolsó frissítés:** 2026-10-14
+**Verzió:** 1.2.0 · **Utolsó frissítés:** 2026-10-19
+
+A felület nyelvei: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
 Kártyás pasziánszok (patience) atlasza — 13 egyszemélyes, játszható játék egyetlen HTML-fájlban, offline, fiók és telemetria nélkül.
 
@@ -24,7 +26,7 @@ Egy atlasz (lapok eredettel, szabályokkal, pontozással, címkékkel és a „�
 - Időmérő, lépések, pontszám (lásd „Pontozás”).
 - Tipp a megoldón keresztül, ismételt megnyomáskor alternatívákkal (heurisztikusan rangsorolva, ellenőrizetlenül); a „Megoldható?” csak a FreeCellnél, háromállapotú eredménnyel: *megoldható* / *a korláton belül nem megoldott* / *nem tudom* — soha nem bizonyosság.
 - Opcionális helyi statisztikák (localStorage, try/catch-ben; az alkalmazás nélkülük is működik).
-- 7 felületi nyelv: RO / EN / FR / IT / ES / PT / DE, automatikus felismeréssel, dinamikus `lang` attribútummal és kulcsparitás-ellenőrző szkripttel (155 kulcs × 7 nyelv).
+- 8 felületi nyelv: RO / EN / FR / IT / ES / PT / DE / HU, automatikus felismeréssel, dinamikus `lang` attribútummal és kulcsparitás-ellenőrző szkripttel (155 kulcs × 7 nyelv).
 - Mobile-first: 390 px vízszintes görgetés nélkül, adaptív kártyaátfedés, aria-live az üzenetekhez, látható fókusz, `prefers-reduced-motion`, `<noscript>`.
 
 ### Játékok
@@ -78,7 +80,7 @@ Nulla hálózati kérés (nincs fetch/XHR, nincsenek külső betűtípusok vagy 
 - A megoldónak van memóriaplafonja (30 000 nyitott állapot), és rövid szeletekben fut; a heurisztikus „Tipp” címkéje: „ellenőrizetlen, elakadt állásba vezethet”.
 - A „nincs több hasznos lépés” üzenet hiányozhat olyan elakadt állásokban, ahol még vannak hatástalan lépések (pl. egy egész oszlop egy üres oszlopra) vagy a pakli korlátlan újrahasznosítása.
 - Az „Új leosztás” 1 000 000 szám közül választ (mint a Microsoft FreeCellben), nem az összes lehetséges permutáció közül.
-- Az atlasz hosszú szövegei csak RO és EN nyelven teljesek; FR/IT/ES/PT/DE nyelven angol szöveg jelenik meg a „szöveg angolul” megjegyzéssel. A gombok és az üzenetek mind a 7 nyelvre le vannak fordítva.
+- Az atlasz hosszú szövegei csak RO és EN nyelven teljesek; FR/IT/ES/PT/DE/HU nyelven angol szöveg jelenik meg a „szöveg angolul” megjegyzéssel. A gombok és az üzenetek mind a 8 nyelvre le vannak fordítva.
 - A tesztek a csomagon kívül vannak (nem részei a tárolónak).
 
 ## Előzmények / Változásnapló
@@ -109,4 +111,4 @@ Alexio — Alexandru-Ionuț Chiuță (alexio@trom.tf)
 
 ## Összefoglaló
 
-Egy offline, egyfájlos atlasz 13 játszható, egyszemélyes pasziánszjátékról (Klondike, FreeCell, Spider, Yukon, Pyramid, TriPeaks, Golf, Scorpion, Canfield, Forty Thieves, Clock, Baker's Dozen, Eight Off), valamint 7 csak az atlaszban szereplő bejegyzésről. Reprodukálható leosztásszámok, korlátlan visszavonás/mégis, húzásos / kattintásos / billentyűzetes játék, valamint egy csomópont-korlátos legjobb-először megoldó a tippekhez és egy opcionális automatikus megoldáshoz (látja a rejtett lapokat; a kudarc soha nem bizonyítja a megoldhatatlanságot). Saját SVG-kártyák, 7 felületi nyelv, szigorú CSP, nincs hálózat, nincs telemetria. ⚠ jelöli, ahol a szabályok közelítések; a Klondike megoldási arányai csak alsó korlátként szerepelnek.
+Egy offline, egyfájlos atlasz 13 játszható, egyszemélyes pasziánszjátékról (Klondike, FreeCell, Spider, Yukon, Pyramid, TriPeaks, Golf, Scorpion, Canfield, Forty Thieves, Clock, Baker's Dozen, Eight Off), valamint 7 csak az atlaszban szereplő bejegyzésről. Reprodukálható leosztásszámok, korlátlan visszavonás/mégis, húzásos / kattintásos / billentyűzetes játék, valamint egy csomópont-korlátos legjobb-először megoldó a tippekhez és egy opcionális automatikus megoldáshoz (látja a rejtett lapokat; a kudarc soha nem bizonyítja a megoldhatatlanságot). Saját SVG-kártyák, 8 felületi nyelv, szigorú CSP, nincs hálózat, nincs telemetria. ⚠ jelöli, ahol a szabályok közelítések; a Klondike megoldási arányai csak alsó korlátként szerepelnek.

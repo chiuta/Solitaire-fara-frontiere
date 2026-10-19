@@ -109,6 +109,6 @@ MIT — vezi fișierul LICENSE.
 
 Alexio — Alexandru-Ionuț Chiuță (alexio@trom.tf)
 
-## English summary
+## Rezumat
 
-An offline, single-file atlas of 13 playable single-player solitaire games (Klondike, FreeCell, Spider, Yukon, Pyramid, TriPeaks, Golf, Scorpion, Canfield, Forty Thieves, Clock, Baker's Dozen, Eight Off) plus 7 atlas-only entries. Reproducible deal numbers, unlimited undo/redo, drag / click / keyboard play, and a node-limited best-first solver for hints and an optional auto-solve (it sees hidden cards; a failure never proves unsolvability). Own SVG cards, 8 UI languages, strict CSP, no network, no telemetry. Marked ⚠ where rules are approximated; Klondike solve rates are reported as lower bounds only.
+Un atlas offline, într-un singur fișier, cu 13 jocuri de solitaire individuale jucabile (Klondike, FreeCell, Spider, Yukon, Pyramid, TriPeaks, Golf, Scorpion, Canfield, Forty Thieves, Clock, Baker's Dozen, Eight Off) plus 7 intrări doar în atlas. Numere de împărțire reproductibile, undo/redo nelimitat, joc prin tragere / clic / tastatură și un solver best-first cu număr limitat de noduri pentru indicii și o rezolvare automată opțională (vede cărțile ascunse; un eșec nu dovedește niciodată că jocul nu are soluție). Cărți SVG proprii, 8 limbi de interfață, CSP strict, fără rețea, fără telemetrie. Marcat ⚠ acolo unde regulile sunt aproximate; ratele de rezolvare la Klondike sunt raportate doar ca limite inferioare.

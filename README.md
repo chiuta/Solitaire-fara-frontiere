@@ -2,7 +2,7 @@
 
 **English** · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Version:** 1.2.2 · **Last updated:** 2026-10-22
+**Version:** 1.2.3 · **Last updated:** 2026-10-22
 
 Interface languages: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -84,6 +84,10 @@ Zero network requests (no fetch/XHR, no external fonts or CDN), zero telemetry. 
 - The tests are outside the package (they are not part of the repo).
 
 ## History / Changelog
+
+### 1.2.3 — 2026-10-22
+
+fff-kit 1.1.4: touch targets and minimum text size.
 
 - 1.2.2 — 2026-10-22: fff-kit 1.1.2: PBKDF2 600,000 iterations, anti-clickjacking protection
 - 1.1.0 — 2026-10-14: Backup and data labelling (fff-kit).

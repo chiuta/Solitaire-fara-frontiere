@@ -2,7 +2,7 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · **Español** · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Versión:** 1.2.1 · **Última actualización:** 2026-10-19
+**Versión:** 1.2.2 · **Última actualización:** 2026-10-22
 
 Idiomas de la interfaz: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -85,6 +85,7 @@ Cero peticiones de red (sin fetch/XHR, sin fuentes ni CDN externos), cero teleme
 
 ## Historial / Registro de cambios
 
+- 1.2.2 — 2026-10-22: fff-kit 1.1.2: PBKDF2 con 600.000 iteraciones, protección anti-clickjacking
 - 1.1.0 — 2026-10-14: copia de seguridad y etiquetado de datos (fff-kit).
 
 - 1.0.4 — 2026-10-12: la versión y la fecha de la última actualización se muestran en la aplicación

@@ -2,7 +2,7 @@
 
 **English** · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Version:** 1.2.4 · **Last updated:** 2026-10-23
+**Version:** 1.2.5 · **Last updated:** 2026-10-23
 
 Interface languages: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -84,6 +84,10 @@ Zero network requests (no fetch/XHR, no external fonts or CDN), zero telemetry. 
 - The tests are outside the package (they are not part of the repo).
 
 ## History / Changelog
+
+### 1.2.5 — 2026-10-23
+
+- Touch targets of at least 44 px on touch devices (`pointer:coarse`); desktop is unchanged.
 
 ### 1.2.3 — 2026-10-22
 

@@ -2,7 +2,7 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · **Italiano** · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Versione:** 1.2.4 · **Ultimo aggiornamento:** 2026-10-23
+**Versione:** 1.2.5 · **Ultimo aggiornamento:** 2026-10-23
 
 Lingue dell'interfaccia: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -84,6 +84,10 @@ Zero richieste di rete (nessun fetch/XHR, nessun font o CDN esterno), zero telem
 - I test sono fuori dal pacchetto (non fanno parte del repo).
 
 ## Cronologia / Changelog
+
+### 1.2.5 — 2026-10-23
+
+- Bersagli touch di almeno 44 px sui dispositivi touch (`pointer:coarse`); il desktop resta invariato.
 
 ### 1.2.3 — 2026-10-22
 

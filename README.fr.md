@@ -2,7 +2,7 @@
 
 [English](README.md) · [Română](README.ro.md) · **Français** · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Version :** 1.2.4 · **Dernière mise à jour :** 2026-10-23
+**Version :** 1.2.5 · **Dernière mise à jour :** 2026-10-23
 
 Langues de l'interface : **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -84,6 +84,10 @@ Zéro requête réseau (pas de fetch/XHR, pas de polices ni de CDN externes), z�
 - Les tests sont en dehors du paquet (ils ne font pas partie du dépôt).
 
 ## Historique / Journal des modifications
+
+### 1.2.5 — 2026-10-23
+
+- Cibles tactiles d’au moins 44 px sur les appareils tactiles (`pointer:coarse`) ; le bureau reste inchangé.
 
 ### 1.2.3 — 2026-10-22
 

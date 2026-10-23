@@ -2,7 +2,7 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · **Español** · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Versión:** 1.2.4 · **Última actualización:** 2026-10-23
+**Versión:** 1.2.5 · **Última actualización:** 2026-10-23
 
 Idiomas de la interfaz: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -84,6 +84,10 @@ Cero peticiones de red (sin fetch/XHR, sin fuentes ni CDN externos), cero teleme
 - Las pruebas están fuera del paquete (no forman parte del repositorio).
 
 ## Historial / Registro de cambios
+
+### 1.2.5 — 2026-10-23
+
+- Objetivos táctiles de al menos 44 px en dispositivos táctiles (`pointer:coarse`); el escritorio no cambia.
 
 ### 1.2.3 — 2026-10-22
 

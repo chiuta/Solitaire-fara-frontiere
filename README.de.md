@@ -2,7 +2,7 @@
 
 [English](README.md) · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · **Deutsch** · [Magyar](README.hu.md)
 
-**Version:** 1.2.4 · **Zuletzt aktualisiert:** 2026-10-23
+**Version:** 1.2.5 · **Zuletzt aktualisiert:** 2026-10-23
 
 Oberflächensprachen: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -84,6 +84,10 @@ Null Netzwerkanfragen (kein fetch/XHR, keine externen Schriftarten oder CDN), nu
 - Die Tests liegen außerhalb des Pakets (sie sind nicht Teil des Repos).
 
 ## Verlauf / Changelog
+
+### 1.2.5 — 2026-10-23
+
+- Touch-Ziele von mindestens 44 px auf Touch-Geräten (`pointer:coarse`); der Desktop bleibt unverändert.
 
 ### 1.2.3 — 2026-10-22
 

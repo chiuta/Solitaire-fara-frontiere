@@ -2,7 +2,7 @@
 
 [English](README.md) · **Română** · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Versiune:** 1.2.6 · **Ultima actualizare:** 2026-10-26
+**Versiune:** 2.0.0 · **Ultima actualizare:** 2026-10-26
 
 Limbile interfeței: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -19,6 +19,8 @@ Un atlas (fișe cu origine, reguli, punctaj, etichete și butonul „▶ Joacă"
 ## Funcții (verificate în cod și în teste)
 
 - 13 jocuri jucabile, cu opțiuni (vezi tabelul).
+- **v2.0.0 — înțelegeri rezolvabile garantate:** opțiunea „Doar înțelegeri rezolvabile (verificate)” caută, cu solverul local, o înțelegere pe care o și câștigă (planul e reluat mutare cu mutare înainte să fie acceptat); „Sugestie” și „Rezolvă automat” folosesc apoi planul. Merge bine la FreeCell, Eight Off, Klondike, Canfield, Yukon; la Spider și Forty Thieves solverul găsește rar soluții și căutarea poate eșua (limită 60 de încercări).
+- **Provocarea zilei:** aceeași înțelegere (calculată din data UTC și joc) pentru oricine, fără server.
 - Număr de înțelegere reproductibil (1 … 2 147 483 647), „înțelegere nouă" (crypto.getRandomValues cu rejection sampling) și „aceeași înțelegere".
 - Undo / Redo nelimitat; Undo restabilește exact și scorul.
 - Mutare prin tragere (pointer events, `touch-action`), prin click-click, prin dublu-tap (mutare automată) și de la tastatură (săgeți / Enter / Spațiu).

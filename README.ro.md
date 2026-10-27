@@ -2,7 +2,7 @@
 
 [English](README.md) · **Română** · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Versiune:** 2.0.0 · **Ultima actualizare:** 2026-10-26
+**Versiune:** 2.1.0 · **Ultima actualizare:** 2026-10-27
 
 Limbile interfeței: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -11,6 +11,8 @@ Atlas de solitaire (patience) cu cărți — 13 jocuri jucabile de un singur juc
 **Live:** https://chiuta.github.io/Solitaire-fara-frontiere/
 
 ![Captură de ecran](screenshot.ro.png)
+
+**Nou în 2.1.0:** statisticile locale arată acum seria curentă și cea mai lungă serie de victorii pentru fiecare joc și set de opțiuni (aplicația oferea deja înțelegeri rezolvabile verificate și provocarea zilei). Vezi `CHANGELOG.md`.
 
 ## Ce este
 
@@ -111,6 +113,14 @@ Reguli consultate: Wikipedia (Klondike, FreeCell, Spider, Yukon, Pyramid, Golf, 
 ## Rulare locală
 
 Deschide `index.html` într-un browser — nu necesită server, build sau instalare.
+
+## Stare
+
+Stabil, versiunea 2.1.0 (2026-10-27). 13 jocuri jucabile; sugestie și „Se poate rezolva?” printr-un solver cu limită de noduri și timp; „Doar înțelegeri rezolvabile (verificate)” (solverul găsește și reia un plan câștigător înainte să ofere înțelegerea; dacă nu găsește unul în limită, aplicația spune acest lucru); provocarea zilei; statistici locale cu serii. Un mod multiplayer local unificat între jocurile de cărți este planificat, nu implementat. Modificări: `CHANGELOG.md`.
+
+## Offline
+
+Un singur fișier, `index.html`: fără CDN, fără fonturi sau scripturi externe, fără urmărire, fără conturi. O politică CSP strictă blochează conexiunile de rețea; un service worker memorează aplicația pentru pornire offline. Statisticile și preferințele rămân doar în localStorage-ul acestui browser.
 
 ## Licență
 

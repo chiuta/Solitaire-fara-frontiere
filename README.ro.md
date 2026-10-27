@@ -2,7 +2,9 @@
 
 [English](README.md) · **Română** · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Versiune:** 2.1.0 · **Ultima actualizare:** 2026-10-27
+**Versiune:** 2.2.0 · **Ultima actualizare:** 2026-10-27
+
+**Nou în 2.2.0:** sub „Doar înțelegeri rezolvabile” aplicația arată **rata măsurată** de găsire a unui plan pentru jocul curent (30 de înțelegeri, limitele aplicației, un singur calculator: FreeCell/Eight Off 97 %, Klondike 47 %, **Spider/Golf/Forty Thieves 0 %**); la jocurile cu 0 % căutarea se oprește după 8 încercări în loc de 60. Nu este rata reală de rezolvabilitate a jocurilor.
 
 Limbile interfeței: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -116,7 +118,7 @@ Deschide `index.html` într-un browser — nu necesită server, build sau instal
 
 ## Stare
 
-Stabil, versiunea 2.1.0 (2026-10-27). 13 jocuri jucabile; sugestie și „Se poate rezolva?” printr-un solver cu limită de noduri și timp; „Doar înțelegeri rezolvabile (verificate)” (solverul găsește și reia un plan câștigător înainte să ofere înțelegerea; dacă nu găsește unul în limită, aplicația spune acest lucru); provocarea zilei; statistici locale cu serii. Un mod multiplayer local unificat între jocurile de cărți este planificat, nu implementat. Modificări: `CHANGELOG.md`.
+Stabil, versiunea 2.2.0 (2026-10-27). 13 jocuri jucabile; sugestie și „Se poate rezolva?” printr-un solver cu limită de noduri și timp; „Doar înțelegeri rezolvabile (verificate)” (solverul găsește și reia un plan câștigător înainte să ofere înțelegerea; dacă nu găsește unul în limită, aplicația spune acest lucru); provocarea zilei; statistici locale cu serii. Un mod multiplayer local unificat între jocurile de cărți este planificat, nu implementat. Modificări: `CHANGELOG.md`.
 
 ## Offline
 

@@ -2,7 +2,9 @@
 
 **English** · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Version:** 2.1.0 · **Last updated:** 2026-10-27
+**Version:** 2.2.0 · **Last updated:** 2026-10-27
+
+**New in 2.2.0:** under "Solvable deals only" the app now shows the **measured** plan-finding rate for the current game (30 deals, the app's limits, one machine: FreeCell/Eight Off 97 %, Klondike 47 %, **Spider/Golf/Forty Thieves 0 %**); for those 0 % games the search stops after 8 attempts instead of 60. It is not the games' true solvability rate.
 
 Interface languages: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -114,7 +116,7 @@ Open `index.html` in a browser — it needs no server, build or installation.
 
 ## Status
 
-Stable, version 2.1.0 (2026-10-27). 13 playable games; hint and "Can it be solved?" through a node/time-limited solver; "Solvable deals only (verified)" (the solver finds and replays a winning plan before the deal is offered; if none is found within the limit the app says so); daily challenge; local statistics with streaks. A unified local multiplayer mode across the card games is planned, not implemented. Changes: `CHANGELOG.md`.
+Stable, version 2.2.0 (2026-10-27). 13 playable games; hint and "Can it be solved?" through a node/time-limited solver; "Solvable deals only (verified)" (the solver finds and replays a winning plan before the deal is offered; if none is found within the limit the app says so); daily challenge; local statistics with streaks. A unified local multiplayer mode across the card games is planned, not implemented. Changes: `CHANGELOG.md`.
 
 ## Offline
 

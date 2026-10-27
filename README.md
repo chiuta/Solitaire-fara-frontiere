@@ -2,7 +2,7 @@
 
 **English** · [Română](README.ro.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Version:** 2.0.0 · **Last updated:** 2026-10-26
+**Version:** 2.1.0 · **Last updated:** 2026-10-27
 
 Interface languages: **Română, English, Français, Italiano, Español, Português (PT), Deutsch, Magyar**
 
@@ -11,6 +11,8 @@ An atlas of card solitaire (patience) — 13 single-player games you can play, i
 **Live app:** https://chiuta.github.io/Solitaire-fara-frontiere/
 
 ![Screenshot](screenshot.en.png)
+
+**New in 2.1.0:** the local statistics now show the current and the longest win streak per game and option set (the app already offered verified-solvable deals and the daily challenge). See `CHANGELOG.md`.
 
 ## What it is
 
@@ -109,6 +111,14 @@ Rules consulted: Wikipedia (Klondike, FreeCell, Spider, Yukon, Pyramid, Golf, Sc
 ## Running locally
 
 Open `index.html` in a browser — it needs no server, build or installation.
+
+## Status
+
+Stable, version 2.1.0 (2026-10-27). 13 playable games; hint and "Can it be solved?" through a node/time-limited solver; "Solvable deals only (verified)" (the solver finds and replays a winning plan before the deal is offered; if none is found within the limit the app says so); daily challenge; local statistics with streaks. A unified local multiplayer mode across the card games is planned, not implemented. Changes: `CHANGELOG.md`.
+
+## Offline
+
+A single file, `index.html`: no CDN, no external fonts or scripts, no tracking, no accounts. A strict CSP blocks network connections; a service worker caches the app for offline start. Statistics and preferences stay in this browser's localStorage only.
 
 ## License
 

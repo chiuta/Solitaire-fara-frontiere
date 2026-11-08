@@ -2,8 +2,8 @@
   "schema": 1,
   "slug": "solitaire-fara-frontiere",
   "name": "Solitaire fără frontiere",
-  "version": "2.2.1",
-  "updated": "2026-11-07",
+  "version": "2.2.2",
+  "updated": "2026-11-08",
   "description": "Atlas de solitaire (pasiență) cu cărți: 13 jocuri jucabile de un singur jucător – Klondike, FreeCell, Spider, Yukon, Pyramid, TriPeaks, Golf, Scorpion, Canfield, Forty Thieves, Clock, Baker's Dozen, Eight Off. Offline, fără telemetrie.",
   "egress": [],
   "permissions": [
@@ -12,8 +12,8 @@
     "Web Crypto"
   ],
   "storageKeys": [],
-  "sizeBytes": 626010,
-  "sha256": "2de0090f5a06a5b4ce578e2aeb843720ef9ab1e1e49039b0d6a7e22f043181e4",
+  "sizeBytes": 639695,
+  "sha256": "b92d103032cbd81dd3269e925acd6b41f99706dfff919ba72a10d3e09816ff8e",
   "csp": {
     "present": true,
     "directives": {
@@ -50,6 +50,7 @@
       "core",
       "store",
       "dialog",
+      "exit",
       "label",
       "bundle",
       "qr",
@@ -59,11 +60,12 @@
     ]
   },
   "kit": {
-    "version": "1.2.1",
+    "version": "1.3.0",
     "modules": [
       "core",
       "store",
       "dialog",
+      "exit",
       "label",
       "bundle",
       "qr",

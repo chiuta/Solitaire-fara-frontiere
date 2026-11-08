@@ -1,4 +1,4 @@
-// Teste v2.2.1 — rata măsurată de găsire a unui plan („Doar înțelegeri rezolvabile”): afișare, 8 limbi, plafon de încercări, reproducere pe probe.
+// Teste v2.2.2 — rata măsurată de găsire a unui plan („Doar înțelegeri rezolvabile”): afișare, 8 limbi, plafon de încercări, reproducere pe probe.
 // Rulare: node tests/solv-rate.test.mjs
 import {createRequire} from 'module';
 import path from 'node:path';

@@ -2,7 +2,7 @@
 
 [English](README.md) · **Română** · [Français](README.fr.md) · [Italiano](README.it.md) · [Español](README.es.md) · [Português](README.pt.md) · [Deutsch](README.de.md) · [Magyar](README.hu.md)
 
-**Versiune:** 2.2.3 · **Ultima actualizare:** 2026-11-10
+**Versiune:** 2.2.4 · **Ultima actualizare:** 2026-11-10
 
 **Nou în 2.2.0:** sub „Doar înțelegeri rezolvabile” aplicația arată **rata măsurată** de găsire a unui plan pentru jocul curent (30 de înțelegeri, limitele aplicației, un singur calculator: FreeCell/Eight Off 97 %, Klondike 47 %, **Spider/Golf/Forty Thieves 0 %**); la jocurile cu 0 % căutarea se oprește după 8 încercări în loc de 60. Nu este rata reală de rezolvabilitate a jocurilor.
 
